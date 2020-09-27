@@ -12,12 +12,9 @@
     {
         private readonly SendGridClient client;
 
-        private readonly EmailAddress from;
-
-        public SendGridEmailSender(string apiKey) //, string fromAddress, string fromName
+        public SendGridEmailSender(string apiKey)
         {
             this.client = new SendGridClient(apiKey);
-            //this.from = new EmailAddress(fromAddress, fromName);
         }
 
         public async Task SendEmailAsync(string from, string fromName, string to, string subject, string htmlContent, IEnumerable<EmailAttachment> attachments = null)
@@ -26,6 +23,7 @@
             {
                 throw new ArgumentException("Subject and message should be provided.");
             }
+
             var fromAddress = new EmailAddress(from, fromName);
             var toAddress = new EmailAddress(to);
             var message = MailHelper.CreateSingleEmail(fromAddress, toAddress, subject, null, htmlContent);
