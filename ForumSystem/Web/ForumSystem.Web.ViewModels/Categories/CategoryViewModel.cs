@@ -1,8 +1,9 @@
 ﻿namespace ForumSystem.Web.ViewModels.Categories
 {
+    using System.Collections.Generic;
+
     using ForumSystem.Data.Models;
     using ForumSystem.Services.Mapping;
-    using System.Collections.Generic;
 
     public class CategoryViewModel : IMapFrom<Category>
     {
@@ -14,6 +15,10 @@
 
         public string ImageUrl { get; set; }
 
-        public IEnumerable<PostInCategoryViewModel> Posts { get; set; }
+        public int CurrentPage { get; set; }
+
+        public int PagesCount { get; set; }
+
+        public IEnumerable<PostInCategoryViewModel> ForumPosts { get; set; }
     }
 }
