@@ -1,0 +1,9 @@
+C:\Dev\CSharpAspNetCoreOct2020\Astrology\Web\AstrologyBlog.Web.Infrastructure\bin\Debug\netstandard2.1\AstrologyBlog.Web.Infrastructure.deps.json
+C:\Dev\CSharpAspNetCoreOct2020\Astrology\Web\AstrologyBlog.Web.Infrastructure\bin\Debug\netstandard2.1\AstrologyBlog.Web.Infrastructure.dll
+C:\Dev\CSharpAspNetCoreOct2020\Astrology\Web\AstrologyBlog.Web.Infrastructure\bin\Debug\netstandard2.1\AstrologyBlog.Web.Infrastructure.pdb
+C:\Dev\CSharpAspNetCoreOct2020\Astrology\Web\AstrologyBlog.Web.Infrastructure\obj\Debug\netstandard2.1\AstrologyBlog.Web.Infrastructure.csprojAssemblyReference.cache
+C:\Dev\CSharpAspNetCoreOct2020\Astrology\Web\AstrologyBlog.Web.Infrastructure\obj\Debug\netstandard2.1\AstrologyBlog.Web.Infrastructure.AssemblyInfoInputs.cache
+C:\Dev\CSharpAspNetCoreOct2020\Astrology\Web\AstrologyBlog.Web.Infrastructure\obj\Debug\netstandard2.1\AstrologyBlog.Web.Infrastructure.AssemblyInfo.cs
+C:\Dev\CSharpAspNetCoreOct2020\Astrology\Web\AstrologyBlog.Web.Infrastructure\obj\Debug\netstandard2.1\AstrologyBlog.Web.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Dev\CSharpAspNetCoreOct2020\Astrology\Web\AstrologyBlog.Web.Infrastructure\obj\Debug\netstandard2.1\AstrologyBlog.Web.Infrastructure.dll
+C:\Dev\CSharpAspNetCoreOct2020\Astrology\Web\AstrologyBlog.Web.Infrastructure\obj\Debug\netstandard2.1\AstrologyBlog.Web.Infrastructure.pdb

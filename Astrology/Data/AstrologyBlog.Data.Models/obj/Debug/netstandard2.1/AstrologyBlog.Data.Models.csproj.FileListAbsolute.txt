@@ -1,0 +1,12 @@
+C:\Dev\CSharpAspNetCoreOct2020\Astrology\Data\AstrologyBlog.Data.Models\bin\Debug\netstandard2.1\AstrologyBlog.Data.Models.deps.json
+C:\Dev\CSharpAspNetCoreOct2020\Astrology\Data\AstrologyBlog.Data.Models\bin\Debug\netstandard2.1\AstrologyBlog.Data.Models.dll
+C:\Dev\CSharpAspNetCoreOct2020\Astrology\Data\AstrologyBlog.Data.Models\bin\Debug\netstandard2.1\AstrologyBlog.Data.Models.pdb
+C:\Dev\CSharpAspNetCoreOct2020\Astrology\Data\AstrologyBlog.Data.Models\bin\Debug\netstandard2.1\AstrologyBlog.Data.Common.dll
+C:\Dev\CSharpAspNetCoreOct2020\Astrology\Data\AstrologyBlog.Data.Models\bin\Debug\netstandard2.1\AstrologyBlog.Data.Common.pdb
+C:\Dev\CSharpAspNetCoreOct2020\Astrology\Data\AstrologyBlog.Data.Models\obj\Debug\netstandard2.1\AstrologyBlog.Data.Models.csprojAssemblyReference.cache
+C:\Dev\CSharpAspNetCoreOct2020\Astrology\Data\AstrologyBlog.Data.Models\obj\Debug\netstandard2.1\AstrologyBlog.Data.Models.AssemblyInfoInputs.cache
+C:\Dev\CSharpAspNetCoreOct2020\Astrology\Data\AstrologyBlog.Data.Models\obj\Debug\netstandard2.1\AstrologyBlog.Data.Models.AssemblyInfo.cs
+C:\Dev\CSharpAspNetCoreOct2020\Astrology\Data\AstrologyBlog.Data.Models\obj\Debug\netstandard2.1\AstrologyBlog.Data.Models.csproj.CoreCompileInputs.cache
+C:\Dev\CSharpAspNetCoreOct2020\Astrology\Data\AstrologyBlog.Data.Models\obj\Debug\netstandard2.1\AstrologyBlog.Data.Models.csproj.CopyComplete
+C:\Dev\CSharpAspNetCoreOct2020\Astrology\Data\AstrologyBlog.Data.Models\obj\Debug\netstandard2.1\AstrologyBlog.Data.Models.dll
+C:\Dev\CSharpAspNetCoreOct2020\Astrology\Data\AstrologyBlog.Data.Models\obj\Debug\netstandard2.1\AstrologyBlog.Data.Models.pdb

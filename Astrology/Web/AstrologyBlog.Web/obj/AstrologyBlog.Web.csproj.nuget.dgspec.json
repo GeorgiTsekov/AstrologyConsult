@@ -1,0 +1,794 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Web\\AstrologyBlog.Web\\AstrologyBlog.Web.csproj": {}
+  },
+  "projects": {
+    "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\AstrologyBlog.Common\\AstrologyBlog.Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\AstrologyBlog.Common\\AstrologyBlog.Common.csproj",
+        "projectName": "AstrologyBlog.Common",
+        "projectPath": "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\AstrologyBlog.Common\\AstrologyBlog.Common.csproj",
+        "packagesPath": "C:\\Users\\georg\\.nuget\\packages\\",
+        "outputPath": "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\AstrologyBlog.Common\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\georg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "dependencies": {
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.2.0-beta.205, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Data\\AstrologyBlog.Data.Common\\AstrologyBlog.Data.Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Data\\AstrologyBlog.Data.Common\\AstrologyBlog.Data.Common.csproj",
+        "projectName": "AstrologyBlog.Data.Common",
+        "projectPath": "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Data\\AstrologyBlog.Data.Common\\AstrologyBlog.Data.Common.csproj",
+        "packagesPath": "C:\\Users\\georg\\.nuget\\packages\\",
+        "outputPath": "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Data\\AstrologyBlog.Data.Common\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\georg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "dependencies": {
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.2.0-beta.205, )"
+            },
+            "System.ComponentModel.Annotations": {
+              "target": "Package",
+              "version": "[4.7.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Data\\AstrologyBlog.Data.Models\\AstrologyBlog.Data.Models.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Data\\AstrologyBlog.Data.Models\\AstrologyBlog.Data.Models.csproj",
+        "projectName": "AstrologyBlog.Data.Models",
+        "projectPath": "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Data\\AstrologyBlog.Data.Models\\AstrologyBlog.Data.Models.csproj",
+        "packagesPath": "C:\\Users\\georg\\.nuget\\packages\\",
+        "outputPath": "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Data\\AstrologyBlog.Data.Models\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\georg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "projectReferences": {
+              "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Data\\AstrologyBlog.Data.Common\\AstrologyBlog.Data.Common.csproj": {
+                "projectPath": "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Data\\AstrologyBlog.Data.Common\\AstrologyBlog.Data.Common.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.9, )"
+            },
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.2.0-beta.205, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Data\\AstrologyBlog.Data\\AstrologyBlog.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Data\\AstrologyBlog.Data\\AstrologyBlog.Data.csproj",
+        "projectName": "AstrologyBlog.Data",
+        "projectPath": "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Data\\AstrologyBlog.Data\\AstrologyBlog.Data.csproj",
+        "packagesPath": "C:\\Users\\georg\\.nuget\\packages\\",
+        "outputPath": "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Data\\AstrologyBlog.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\georg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\AstrologyBlog.Common\\AstrologyBlog.Common.csproj": {
+                "projectPath": "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\AstrologyBlog.Common\\AstrologyBlog.Common.csproj"
+              },
+              "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Data\\AstrologyBlog.Data.Common\\AstrologyBlog.Data.Common.csproj": {
+                "projectPath": "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Data\\AstrologyBlog.Data.Common\\AstrologyBlog.Data.Common.csproj"
+              },
+              "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Data\\AstrologyBlog.Data.Models\\AstrologyBlog.Data.Models.csproj": {
+                "projectPath": "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Data\\AstrologyBlog.Data.Models\\AstrologyBlog.Data.Models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.9, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.9, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.9, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.9, )"
+            },
+            "Microsoft.Extensions.Configuration.UserSecrets": {
+              "target": "Package",
+              "version": "[3.1.9, )"
+            },
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.2.0-beta.205, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Services\\AstrologyBlog.Services.Data\\AstrologyBlog.Services.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Services\\AstrologyBlog.Services.Data\\AstrologyBlog.Services.Data.csproj",
+        "projectName": "AstrologyBlog.Services.Data",
+        "projectPath": "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Services\\AstrologyBlog.Services.Data\\AstrologyBlog.Services.Data.csproj",
+        "packagesPath": "C:\\Users\\georg\\.nuget\\packages\\",
+        "outputPath": "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Services\\AstrologyBlog.Services.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\georg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "projectReferences": {
+              "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Data\\AstrologyBlog.Data.Common\\AstrologyBlog.Data.Common.csproj": {
+                "projectPath": "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Data\\AstrologyBlog.Data.Common\\AstrologyBlog.Data.Common.csproj"
+              },
+              "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Data\\AstrologyBlog.Data.Models\\AstrologyBlog.Data.Models.csproj": {
+                "projectPath": "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Data\\AstrologyBlog.Data.Models\\AstrologyBlog.Data.Models.csproj"
+              },
+              "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Services\\AstrologyBlog.Services.Mapping\\AstrologyBlog.Services.Mapping.csproj": {
+                "projectPath": "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Services\\AstrologyBlog.Services.Mapping\\AstrologyBlog.Services.Mapping.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "dependencies": {
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.2.0-beta.205, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Services\\AstrologyBlog.Services.Mapping\\AstrologyBlog.Services.Mapping.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Services\\AstrologyBlog.Services.Mapping\\AstrologyBlog.Services.Mapping.csproj",
+        "projectName": "AstrologyBlog.Services.Mapping",
+        "projectPath": "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Services\\AstrologyBlog.Services.Mapping\\AstrologyBlog.Services.Mapping.csproj",
+        "packagesPath": "C:\\Users\\georg\\.nuget\\packages\\",
+        "outputPath": "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Services\\AstrologyBlog.Services.Mapping\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\georg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[10.1.1, )"
+            },
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.2.0-beta.205, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Services\\AstrologyBlog.Services.Messaging\\AstrologyBlog.Services.Messaging.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Services\\AstrologyBlog.Services.Messaging\\AstrologyBlog.Services.Messaging.csproj",
+        "projectName": "AstrologyBlog.Services.Messaging",
+        "projectPath": "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Services\\AstrologyBlog.Services.Messaging\\AstrologyBlog.Services.Messaging.csproj",
+        "packagesPath": "C:\\Users\\georg\\.nuget\\packages\\",
+        "outputPath": "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Services\\AstrologyBlog.Services.Messaging\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\georg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "dependencies": {
+            "Sendgrid": {
+              "target": "Package",
+              "version": "[9.21.0, )"
+            },
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.2.0-beta.205, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Services\\AstrologyBlog.Services\\AstrologyBlog.Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Services\\AstrologyBlog.Services\\AstrologyBlog.Services.csproj",
+        "projectName": "AstrologyBlog.Services",
+        "projectPath": "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Services\\AstrologyBlog.Services\\AstrologyBlog.Services.csproj",
+        "packagesPath": "C:\\Users\\georg\\.nuget\\packages\\",
+        "outputPath": "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Services\\AstrologyBlog.Services\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\georg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "dependencies": {
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.2.0-beta.205, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Web\\AstrologyBlog.Web.Infrastructure\\AstrologyBlog.Web.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Web\\AstrologyBlog.Web.Infrastructure\\AstrologyBlog.Web.Infrastructure.csproj",
+        "projectName": "AstrologyBlog.Web.Infrastructure",
+        "projectPath": "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Web\\AstrologyBlog.Web.Infrastructure\\AstrologyBlog.Web.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\georg\\.nuget\\packages\\",
+        "outputPath": "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Web\\AstrologyBlog.Web.Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\georg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "dependencies": {
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.2.0-beta.205, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Web\\AstrologyBlog.Web.ViewModels\\AstrologyBlog.Web.ViewModels.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Web\\AstrologyBlog.Web.ViewModels\\AstrologyBlog.Web.ViewModels.csproj",
+        "projectName": "AstrologyBlog.Web.ViewModels",
+        "projectPath": "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Web\\AstrologyBlog.Web.ViewModels\\AstrologyBlog.Web.ViewModels.csproj",
+        "packagesPath": "C:\\Users\\georg\\.nuget\\packages\\",
+        "outputPath": "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Web\\AstrologyBlog.Web.ViewModels\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\georg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "projectReferences": {
+              "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Data\\AstrologyBlog.Data.Models\\AstrologyBlog.Data.Models.csproj": {
+                "projectPath": "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Data\\AstrologyBlog.Data.Models\\AstrologyBlog.Data.Models.csproj"
+              },
+              "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Services\\AstrologyBlog.Services.Mapping\\AstrologyBlog.Services.Mapping.csproj": {
+                "projectPath": "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Services\\AstrologyBlog.Services.Mapping\\AstrologyBlog.Services.Mapping.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "dependencies": {
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.2.0-beta.205, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Web\\AstrologyBlog.Web\\AstrologyBlog.Web.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Web\\AstrologyBlog.Web\\AstrologyBlog.Web.csproj",
+        "projectName": "AstrologyBlog.Web",
+        "projectPath": "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Web\\AstrologyBlog.Web\\AstrologyBlog.Web.csproj",
+        "packagesPath": "C:\\Users\\georg\\.nuget\\packages\\",
+        "outputPath": "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Web\\AstrologyBlog.Web\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\georg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\AstrologyBlog.Common\\AstrologyBlog.Common.csproj": {
+                "projectPath": "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\AstrologyBlog.Common\\AstrologyBlog.Common.csproj"
+              },
+              "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Data\\AstrologyBlog.Data.Models\\AstrologyBlog.Data.Models.csproj": {
+                "projectPath": "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Data\\AstrologyBlog.Data.Models\\AstrologyBlog.Data.Models.csproj"
+              },
+              "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Data\\AstrologyBlog.Data\\AstrologyBlog.Data.csproj": {
+                "projectPath": "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Data\\AstrologyBlog.Data\\AstrologyBlog.Data.csproj"
+              },
+              "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Services\\AstrologyBlog.Services.Data\\AstrologyBlog.Services.Data.csproj": {
+                "projectPath": "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Services\\AstrologyBlog.Services.Data\\AstrologyBlog.Services.Data.csproj"
+              },
+              "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Services\\AstrologyBlog.Services.Mapping\\AstrologyBlog.Services.Mapping.csproj": {
+                "projectPath": "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Services\\AstrologyBlog.Services.Mapping\\AstrologyBlog.Services.Mapping.csproj"
+              },
+              "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Services\\AstrologyBlog.Services.Messaging\\AstrologyBlog.Services.Messaging.csproj": {
+                "projectPath": "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Services\\AstrologyBlog.Services.Messaging\\AstrologyBlog.Services.Messaging.csproj"
+              },
+              "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Services\\AstrologyBlog.Services\\AstrologyBlog.Services.csproj": {
+                "projectPath": "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Services\\AstrologyBlog.Services\\AstrologyBlog.Services.csproj"
+              },
+              "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Web\\AstrologyBlog.Web.Infrastructure\\AstrologyBlog.Web.Infrastructure.csproj": {
+                "projectPath": "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Web\\AstrologyBlog.Web.Infrastructure\\AstrologyBlog.Web.Infrastructure.csproj"
+              },
+              "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Web\\AstrologyBlog.Web.ViewModels\\AstrologyBlog.Web.ViewModels.csproj": {
+                "projectPath": "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Web\\AstrologyBlog.Web.ViewModels\\AstrologyBlog.Web.ViewModels.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "BuildBundlerMinifier": {
+              "target": "Package",
+              "version": "[3.2.449, )"
+            },
+            "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.9, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[3.1.9, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
+              "target": "Package",
+              "version": "[3.1.9, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[3.1.4, )"
+            },
+            "Microsoft.Web.LibraryManager.Build": {
+              "target": "Package",
+              "version": "[2.1.113, )"
+            },
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.2.0-beta.205, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "ptM69a1XfMiOpq6+K4Q049boTu2QaZiJ3rUsZuzw5b1nTSeyhU4purFaoY0HFwDQ+NFFwB4e6cXpZDLvvC6j5Q==",
+  "success": true,
+  "projectFilePath": "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Web\\AstrologyBlog.Web.Infrastructure\\AstrologyBlog.Web.Infrastructure.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\georg\\.nuget\\packages\\stylecop.analyzers\\1.2.0-beta.205\\stylecop.analyzers.1.2.0-beta.205.nupkg.sha512",
+    "C:\\Users\\georg\\.nuget\\packages\\stylecop.analyzers.unstable\\1.2.0.205\\stylecop.analyzers.unstable.1.2.0.205.nupkg.sha512"
+  ],
+  "logs": []
+}

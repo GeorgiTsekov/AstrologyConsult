@@ -1,0 +1,9 @@
+C:\Dev\CSharpAspNetCoreOct2020\Astrology\Services\AstrologyBlog.Services.Messaging\bin\Debug\netstandard2.1\AstrologyBlog.Services.Messaging.deps.json
+C:\Dev\CSharpAspNetCoreOct2020\Astrology\Services\AstrologyBlog.Services.Messaging\bin\Debug\netstandard2.1\AstrologyBlog.Services.Messaging.dll
+C:\Dev\CSharpAspNetCoreOct2020\Astrology\Services\AstrologyBlog.Services.Messaging\bin\Debug\netstandard2.1\AstrologyBlog.Services.Messaging.pdb
+C:\Dev\CSharpAspNetCoreOct2020\Astrology\Services\AstrologyBlog.Services.Messaging\obj\Debug\netstandard2.1\AstrologyBlog.Services.Messaging.csprojAssemblyReference.cache
+C:\Dev\CSharpAspNetCoreOct2020\Astrology\Services\AstrologyBlog.Services.Messaging\obj\Debug\netstandard2.1\AstrologyBlog.Services.Messaging.AssemblyInfoInputs.cache
+C:\Dev\CSharpAspNetCoreOct2020\Astrology\Services\AstrologyBlog.Services.Messaging\obj\Debug\netstandard2.1\AstrologyBlog.Services.Messaging.AssemblyInfo.cs
+C:\Dev\CSharpAspNetCoreOct2020\Astrology\Services\AstrologyBlog.Services.Messaging\obj\Debug\netstandard2.1\AstrologyBlog.Services.Messaging.csproj.CoreCompileInputs.cache
+C:\Dev\CSharpAspNetCoreOct2020\Astrology\Services\AstrologyBlog.Services.Messaging\obj\Debug\netstandard2.1\AstrologyBlog.Services.Messaging.dll
+C:\Dev\CSharpAspNetCoreOct2020\Astrology\Services\AstrologyBlog.Services.Messaging\obj\Debug\netstandard2.1\AstrologyBlog.Services.Messaging.pdb
