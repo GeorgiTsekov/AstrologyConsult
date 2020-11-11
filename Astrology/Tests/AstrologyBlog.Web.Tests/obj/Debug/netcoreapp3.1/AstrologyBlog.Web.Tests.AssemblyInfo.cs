@@ -12,8 +12,8 @@ using System;
 using System.Reflection;
 
 [assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap4")]
-[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("AstrologyBlog.Data", "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Data\\AstrologyBlog.Data", "AstrologyBlog.Data.csproj", "0")]
-[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("AstrologyBlog.Web", "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Web\\AstrologyBlog.Web", "AstrologyBlog.Web.csproj", "0")]
+[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("AstrologyBlog.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Data\\AstrologyBlog.Data", "AstrologyBlog.Data.csproj", "0")]
+[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("AstrologyBlog.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Web\\AstrologyBlog.Web", "AstrologyBlog.Web.csproj", "0")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("AstrologyBlog.Web.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
