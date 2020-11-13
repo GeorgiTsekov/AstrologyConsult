@@ -2938,7 +2938,8 @@
         "dependencies": {
           "AstrologyBlog.Data.Common": "1.0.0",
           "AstrologyBlog.Data.Models": "1.0.0",
-          "AstrologyBlog.Services.Mapping": "1.0.0"
+          "AstrologyBlog.Services.Mapping": "1.0.0",
+          "AstrologyBlog.Web.ViewModels": "1.0.0"
         },
         "compile": {
           "bin/placeholder/AstrologyBlog.Services.Data.dll": {}

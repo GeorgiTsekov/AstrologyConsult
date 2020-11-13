@@ -1711,7 +1711,8 @@
         "dependencies": {
           "AstrologyBlog.Data.Common": "1.0.0",
           "AstrologyBlog.Data.Models": "1.0.0",
-          "AstrologyBlog.Services.Mapping": "1.0.0"
+          "AstrologyBlog.Services.Mapping": "1.0.0",
+          "AstrologyBlog.Web.ViewModels": "1.0.0"
         },
         "compile": {
           "bin/placeholder/AstrologyBlog.Services.Data.dll": {}
@@ -1744,6 +1745,20 @@
         },
         "runtime": {
           "bin/placeholder/AstrologyBlog.Services.Messaging.dll": {}
+        }
+      },
+      "AstrologyBlog.Web.ViewModels/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "dependencies": {
+          "AstrologyBlog.Data.Models": "1.0.0",
+          "AstrologyBlog.Services.Mapping": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/AstrologyBlog.Web.ViewModels.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AstrologyBlog.Web.ViewModels.dll": {}
         }
       }
     }
@@ -6174,6 +6189,11 @@
       "type": "project",
       "path": "../../Services/AstrologyBlog.Services.Messaging/AstrologyBlog.Services.Messaging.csproj",
       "msbuildProject": "../../Services/AstrologyBlog.Services.Messaging/AstrologyBlog.Services.Messaging.csproj"
+    },
+    "AstrologyBlog.Web.ViewModels/1.0.0": {
+      "type": "project",
+      "path": "../../Web/AstrologyBlog.Web.ViewModels/AstrologyBlog.Web.ViewModels.csproj",
+      "msbuildProject": "../../Web/AstrologyBlog.Web.ViewModels/AstrologyBlog.Web.ViewModels.csproj"
     }
   },
   "projectFileDependencyGroups": {

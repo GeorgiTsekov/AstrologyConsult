@@ -14,3 +14,5 @@ C:\Dev\CSharpAspNetCoreOct2020\Astrology\Services\AstrologyBlog.Services.Data\ob
 C:\Dev\CSharpAspNetCoreOct2020\Astrology\Services\AstrologyBlog.Services.Data\obj\Debug\netstandard2.1\AstrologyBlog.Services.Data.csproj.CopyComplete
 C:\Dev\CSharpAspNetCoreOct2020\Astrology\Services\AstrologyBlog.Services.Data\obj\Debug\netstandard2.1\AstrologyBlog.Services.Data.dll
 C:\Dev\CSharpAspNetCoreOct2020\Astrology\Services\AstrologyBlog.Services.Data\obj\Debug\netstandard2.1\AstrologyBlog.Services.Data.pdb
+C:\Dev\CSharpAspNetCoreOct2020\Astrology\Services\AstrologyBlog.Services.Data\bin\Debug\netstandard2.1\AstrologyBlog.Web.ViewModels.dll
+C:\Dev\CSharpAspNetCoreOct2020\Astrology\Services\AstrologyBlog.Services.Data\bin\Debug\netstandard2.1\AstrologyBlog.Web.ViewModels.pdb

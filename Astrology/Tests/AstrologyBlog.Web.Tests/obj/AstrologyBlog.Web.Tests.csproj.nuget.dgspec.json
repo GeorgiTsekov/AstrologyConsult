@@ -321,6 +321,9 @@
               },
               "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Services\\AstrologyBlog.Services.Mapping\\AstrologyBlog.Services.Mapping.csproj": {
                 "projectPath": "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Services\\AstrologyBlog.Services.Mapping\\AstrologyBlog.Services.Mapping.csproj"
+              },
+              "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Web\\AstrologyBlog.Web.ViewModels\\AstrologyBlog.Web.ViewModels.csproj": {
+                "projectPath": "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Web\\AstrologyBlog.Web.ViewModels\\AstrologyBlog.Web.ViewModels.csproj"
               }
             }
           }

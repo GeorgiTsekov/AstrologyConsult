@@ -12,6 +12,7 @@
           "AstrologyBlog.Data.Common": "1.0.0",
           "AstrologyBlog.Data.Models": "1.0.0",
           "AstrologyBlog.Services.Mapping": "1.0.0",
+          "AstrologyBlog.Web.ViewModels": "1.0.0",
           "StyleCop.Analyzers": "1.2.0-beta.205"
         },
         "runtime": {
@@ -387,6 +388,15 @@
         "runtime": {
           "AstrologyBlog.Services.Mapping.dll": {}
         }
+      },
+      "AstrologyBlog.Web.ViewModels/1.0.0": {
+        "dependencies": {
+          "AstrologyBlog.Data.Models": "1.0.0",
+          "AstrologyBlog.Services.Mapping": "1.0.0"
+        },
+        "runtime": {
+          "AstrologyBlog.Web.ViewModels.dll": {}
+        }
       }
     }
   },
@@ -652,6 +662,11 @@
       "sha512": ""
     },
     "AstrologyBlog.Services.Mapping/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AstrologyBlog.Web.ViewModels/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

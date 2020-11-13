@@ -2,26 +2,30 @@
 {
     using System.Diagnostics;
     using System.Linq;
-    using AstrologyBlog.Data;
+
+    using AstrologyBlog.Data.Common.Repositories;
+    using AstrologyBlog.Data.Models;
+    using AstrologyBlog.Services.Data;
     using AstrologyBlog.Web.ViewModels;
     using AstrologyBlog.Web.ViewModels.Home;
     using Microsoft.AspNetCore.Mvc;
 
     public class HomeController : BaseController
     {
-        private readonly ApplicationDbContext db;
+        private readonly IGetAllService allService;
 
-        public HomeController(ApplicationDbContext db)
+        public HomeController(IGetAllService allService)
         {
-            this.db = db;
+            this.allService = allService;
         }
 
         public IActionResult Index()
         {
+            var allDto = this.allService.GetAll();
+
             var viewModel = new IndexViewModel
             {
-                CategoriesCount = this.db.Categories.Count(),
-                ArticlesCount = this.db.Articles.Count(),
+                Categories = allDto.Categories,
             };
 
             return this.View(viewModel);

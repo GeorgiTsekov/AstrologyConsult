@@ -21,6 +21,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Data\AstrologyBlog.Data.Common\AstrologyBlog.Data.Common.csproj" />
     <ProjectReference Include="..\..\Data\AstrologyBlog.Data.Models\AstrologyBlog.Data.Models.csproj" />
+    <ProjectReference Include="..\..\Web\AstrologyBlog.Web.ViewModels\AstrologyBlog.Web.ViewModels.csproj" />
     <ProjectReference Include="..\AstrologyBlog.Services.Mapping\AstrologyBlog.Services.Mapping.csproj" />
   </ItemGroup>
 

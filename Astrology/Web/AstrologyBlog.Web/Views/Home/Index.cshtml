@@ -7,8 +7,12 @@
 <div class="text-center">
     <h1 class="display-4">Welcome to @GlobalConstants.SystemName!</h1>
     <p>We have:</p>
-    <ul>
-        <li>Articles: @Model.ArticlesCount</li>
-        <li>Categories: @Model.CategoriesCount</li>
-    </ul>
+    <div class="row">
+        @foreach (var category in Model.Categories)
+        {
+            <div class="col-md-4 media">
+                @category.Name
+            </div>
+        }
+    </div>
 </div>
