@@ -19,6 +19,15 @@
             this.articlesService = articlesService;
         }
 
+        public IActionResult All()
+        {
+            var viewModel = new IndexArticleViewModel
+            {
+                Articles = this.articlesService.GetAll<ArticleViewModel>(),
+            };
+            return this.View(viewModel);
+        }
+
         public IActionResult Create()
         {
             var viewModel = new CreateArticleInputModel

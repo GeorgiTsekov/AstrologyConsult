@@ -1,10 +1,17 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-
-namespace AstrologyBlog.Web.ViewModels.Articles
+﻿namespace AstrologyBlog.Web.ViewModels.Articles
 {
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+
+    using AstrologyBlog.Data.Models;
+
     public class CreateArticleInputModel
     {
+        public CreateArticleInputModel()
+        {
+            this.Comments = new HashSet<Comment>();
+        }
+
         [Required]
         [MinLength(4)]
         public string Name { get; set; }
@@ -19,5 +26,7 @@ namespace AstrologyBlog.Web.ViewModels.Articles
         public int CategoryId { get; set; }
 
         public IEnumerable<KeyValuePair<string, string>> CategoriesItems { get; set; }
+
+        public ICollection<Comment> Comments { get; set; }
     }
 }

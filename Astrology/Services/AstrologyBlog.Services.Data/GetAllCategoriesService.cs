@@ -7,7 +7,6 @@
 
     using AstrologyBlog.Data.Common.Repositories;
     using AstrologyBlog.Data.Models;
-    using AstrologyBlog.Services.Data.Models;
     using AstrologyBlog.Services.Mapping;
 
     public class GetAllCategoriesService : IGetAllCategoriesService
@@ -32,7 +31,10 @@
 
         public T GetByName<T>(string name)
         {
-            throw new System.NotImplementedException();
+            var category = this.categoriesRepository.All().Where(x => x.Name.Replace("-", " ") == name.Replace("-", " "))
+                .To<T>()
+                .FirstOrDefault();
+            return category;
         }
     }
 }

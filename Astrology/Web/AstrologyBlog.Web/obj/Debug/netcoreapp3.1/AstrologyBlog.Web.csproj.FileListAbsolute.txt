@@ -457,3 +457,6 @@ C:\Dev\CSharpAspNetCoreOct2020\Astrology\Web\AstrologyBlog.Web\obj\Debug\netcore
 C:\Dev\CSharpAspNetCoreOct2020\Astrology\Web\AstrologyBlog.Web\obj\Debug\netcoreapp3.1\AstrologyBlog.Web.pdb
 C:\Dev\CSharpAspNetCoreOct2020\Astrology\Web\AstrologyBlog.Web\obj\Debug\netcoreapp3.1\AstrologyBlog.Web.genruntimeconfig.cache
 C:\Dev\CSharpAspNetCoreOct2020\Astrology\Web\AstrologyBlog.Web\obj\Debug\netcoreapp3.1\Razor\Views\Articles\Create.cshtml.g.cs
+C:\Dev\CSharpAspNetCoreOct2020\Astrology\Web\AstrologyBlog.Web\obj\Debug\netcoreapp3.1\Razor\Views\Categories\ByName.cshtml.g.cs
+C:\Dev\CSharpAspNetCoreOct2020\Astrology\Web\AstrologyBlog.Web\obj\Debug\netcoreapp3.1\Razor\Views\Articles\All.cshtml.g.cs
+C:\Dev\CSharpAspNetCoreOct2020\Astrology\Web\AstrologyBlog.Web\obj\Debug\netcoreapp3.1\Razor\Views\Articles\ById.cshtml.g.cs

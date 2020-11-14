@@ -1,0 +1,11 @@
+﻿@model AstrologyBlog.Web.ViewModels.Categories.CategoryViewModel
+@{
+    this.ViewData["Title"] = Model.Name;
+}
+
+<h1 class="display-3">@Model.Name</h1>
+<img src="@Model.ImageUrl" width="1000">
+<hr />
+<div class="text-body">
+    @Model.Description
+</div>
