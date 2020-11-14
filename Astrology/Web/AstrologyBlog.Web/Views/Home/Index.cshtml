@@ -1,18 +1,24 @@
 ﻿@using AstrologyBlog.Common
 @model AstrologyBlog.Web.ViewModels.Home.IndexViewModel
 @{
-    this.ViewData["Title"] = "Home Page";
+    this.ViewData["Title"] = $"Welcome to {GlobalConstants.SystemName}!";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome to @GlobalConstants.SystemName!</h1>
-    <p>We have:</p>
-    <div class="row">
-        @foreach (var category in Model.Categories)
-        {
-            <div class="col-md-4 media">
+    <h1 class="display-3">@this.ViewData["Title"]</h1>
+</div>
+<hr />
+<div class="row">
+    @foreach (var category in Model.Categories)
+    {
+<div class="col-md-6 media">
+    <img src="@category.ImageUrl" width="100" class="mr-3" alt="@category.Description">
+    <div class="media-body">
+        <h5 class="mt-0">
+            <a href="@category.Url">
                 @category.Name
-            </div>
-        }
+            </a>
+        </h5>
     </div>
+</div>}
 </div>

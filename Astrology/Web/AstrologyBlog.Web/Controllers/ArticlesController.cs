@@ -1,9 +1,7 @@
 ﻿namespace AstrologyBlog.Web.Controllers
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
     using System.Threading.Tasks;
+
     using AstrologyBlog.Services.Data;
     using AstrologyBlog.Web.ViewModels.Articles;
     using Microsoft.AspNetCore.Mvc;
@@ -11,21 +9,27 @@
     public class ArticlesController : Controller
     {
         private readonly ICategoriesService categoriesService;
+        private readonly IArticlesService articlesService;
 
-        public ArticlesController(ICategoriesService categoriesService)
+        public ArticlesController(
+            ICategoriesService categoriesService,
+            IArticlesService articlesService)
         {
             this.categoriesService = categoriesService;
+            this.articlesService = articlesService;
         }
 
         public IActionResult Create()
         {
-            var viewModel = new CreateArticleInputModel();
-            viewModel.CategoriesItems = this.categoriesService.GetAllAsKeyValuePairs();
+            var viewModel = new CreateArticleInputModel
+            {
+                CategoriesItems = this.categoriesService.GetAllAsKeyValuePairs(),
+            };
             return this.View(viewModel);
         }
 
         [HttpPost]
-        public IActionResult Create(CreateArticleInputModel input)
+        public async Task<IActionResult> Create(CreateArticleInputModel input)
         {
             if (!this.ModelState.IsValid)
             {
@@ -33,7 +37,8 @@
                 return this.View(input);
             }
 
-            // TODO Create article using service method
+            await this.articlesService.CreateAsync(input);
+
             // TODO Redirect to article info page
             return this.Redirect("/");
         }

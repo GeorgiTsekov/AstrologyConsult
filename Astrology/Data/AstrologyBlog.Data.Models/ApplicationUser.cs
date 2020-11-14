@@ -16,6 +16,8 @@ namespace AstrologyBlog.Data.Models
             this.Roles = new HashSet<IdentityUserRole<string>>();
             this.Claims = new HashSet<IdentityUserClaim<string>>();
             this.Logins = new HashSet<IdentityUserLogin<string>>();
+            this.Articles = new HashSet<Article>();
+            this.Comments = new HashSet<Comment>();
         }
 
         // Audit info
@@ -33,5 +35,9 @@ namespace AstrologyBlog.Data.Models
         public virtual ICollection<IdentityUserClaim<string>> Claims { get; set; }
 
         public virtual ICollection<IdentityUserLogin<string>> Logins { get; set; }
+
+        public virtual ICollection<Article> Articles { get; set; }
+
+        public virtual ICollection<Comment> Comments { get; set; }
     }
 }

@@ -6,28 +6,26 @@
     using AstrologyBlog.Data.Common.Repositories;
     using AstrologyBlog.Data.Models;
     using AstrologyBlog.Services.Data;
+    using AstrologyBlog.Services.Mapping;
     using AstrologyBlog.Web.ViewModels;
     using AstrologyBlog.Web.ViewModels.Home;
     using Microsoft.AspNetCore.Mvc;
 
     public class HomeController : BaseController
     {
-        private readonly IGetAllService allService;
+        private readonly IGetAllCategoriesService getAllCategoriesService;
 
-        public HomeController(IGetAllService allService)
+        public HomeController(IGetAllCategoriesService getAllCategoriesService)
         {
-            this.allService = allService;
+            this.getAllCategoriesService = getAllCategoriesService;
         }
 
         public IActionResult Index()
         {
-            var allDto = this.allService.GetAll();
-
             var viewModel = new IndexViewModel
             {
-                Categories = allDto.Categories,
+                Categories = this.getAllCategoriesService.GetAll<IndexCategoryViewModel>(),
             };
-
             return this.View(viewModel);
         }
 

@@ -25,4 +25,8 @@
     <ProjectReference Include="..\AstrologyBlog.Services.Mapping\AstrologyBlog.Services.Mapping.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+
 </Project>
