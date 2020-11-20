@@ -4,6 +4,7 @@
 
     using AstrologyBlog.Services.Data;
     using AstrologyBlog.Web.ViewModels.Articles;
+    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
 
     public class ArticlesController : Controller
@@ -28,6 +29,7 @@
             return this.View(viewModel);
         }
 
+        [Authorize]
         public IActionResult Create()
         {
             var viewModel = new CreateArticleInputModel
@@ -38,6 +40,7 @@
         }
 
         [HttpPost]
+        [Authorize]
         public async Task<IActionResult> Create(CreateArticleInputModel input)
         {
             if (!this.ModelState.IsValid)
@@ -48,8 +51,7 @@
 
             await this.articlesService.CreateAsync(input);
 
-            // TODO Redirect to article info page
-            return this.Redirect("/");
+            return this.Redirect("/Articles/All");
         }
     }
 }
