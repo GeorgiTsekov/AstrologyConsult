@@ -1,23 +1,27 @@
 ﻿namespace AstrologyBlog.Web.Controllers
 {
     using System.Threading.Tasks;
-
+    using AstrologyBlog.Data.Models;
     using AstrologyBlog.Services.Data;
     using AstrologyBlog.Web.ViewModels.Articles;
     using Microsoft.AspNetCore.Authorization;
+    using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
 
     public class ArticlesController : Controller
     {
         private readonly ICategoriesService categoriesService;
         private readonly IArticlesService articlesService;
+        private readonly UserManager<ApplicationUser> userManager;
 
         public ArticlesController(
             ICategoriesService categoriesService,
-            IArticlesService articlesService)
+            IArticlesService articlesService,
+            UserManager<ApplicationUser> userManager)
         {
             this.categoriesService = categoriesService;
             this.articlesService = articlesService;
+            this.userManager = userManager;
         }
 
         public IActionResult All()
@@ -32,10 +36,12 @@
         [Authorize]
         public IActionResult Create()
         {
+            var categories = this.categoriesService.GetAll<CategoryDropDowwViewModel>();
             var viewModel = new CreateArticleInputModel
             {
-                CategoriesItems = this.categoriesService.GetAllAsKeyValuePairs(),
+                Categories = categories,
             };
+
             return this.View(viewModel);
         }
 
@@ -45,13 +51,13 @@
         {
             if (!this.ModelState.IsValid)
             {
-                input.CategoriesItems = this.categoriesService.GetAllAsKeyValuePairs();
                 return this.View(input);
             }
 
-            await this.articlesService.CreateAsync(input);
+            var user = await this.userManager.GetUserAsync(this.User);
+            var articleId = await this.articlesService.CreateAsync(input.Name, input.Description, input.ImageUrl, input.CategoryId, user.Id);
 
-            return this.Redirect("/Articles/All");
+            return this.RedirectToAction("ById", new { id = articleId });
         }
     }
 }

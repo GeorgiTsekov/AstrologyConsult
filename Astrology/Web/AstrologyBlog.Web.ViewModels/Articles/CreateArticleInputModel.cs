@@ -7,11 +7,6 @@
 
     public class CreateArticleInputModel
     {
-        public CreateArticleInputModel()
-        {
-            this.Comments = new HashSet<Comment>();
-        }
-
         [Required]
         [MinLength(4)]
         public string Name { get; set; }
@@ -21,12 +16,13 @@
         public string Description { get; set; }
 
         // TODO imgfile
+        [Required]
         public string ImageUrl { get; set; }
 
+        [Range(1, int.MaxValue)]
+        [Display(Name = "Category")]
         public int CategoryId { get; set; }
 
-        public IEnumerable<KeyValuePair<string, string>> CategoriesItems { get; set; }
-
-        public ICollection<Comment> Comments { get; set; }
+        public IEnumerable<CategoryDropDowwViewModel> Categories { get; set; }
     }
 }

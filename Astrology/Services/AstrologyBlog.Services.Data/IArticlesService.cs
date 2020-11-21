@@ -3,11 +3,9 @@
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
-    using AstrologyBlog.Web.ViewModels.Articles;
-
     public interface IArticlesService
     {
-        Task CreateAsync(CreateArticleInputModel input);
+        Task<int> CreateAsync(string name, string description, string imageUrl, int categoryId, string userId);
 
         IEnumerable<T> GetAll<T>(int? count = null);
     }

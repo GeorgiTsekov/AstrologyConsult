@@ -1,12 +1,11 @@
 ﻿namespace AstrologyBlog.Services.Data
 {
-    using System;
     using System.Collections.Generic;
     using System.Linq;
-    using System.Text;
 
     using AstrologyBlog.Data.Common.Repositories;
     using AstrologyBlog.Data.Models;
+    using AstrologyBlog.Services.Mapping;
 
     public class CategoriesService : ICategoriesService
     {
@@ -17,13 +16,16 @@
             this.categoriesRepository = categoriesRepository;
         }
 
-        public IEnumerable<KeyValuePair<string, string>> GetAllAsKeyValuePairs()
+        public IEnumerable<T> GetAll<T>(int? count = null)
         {
-            return this.categoriesRepository.All().Select(x => new
+            IQueryable<Category> query = this.categoriesRepository.All().OrderBy(x => x.Name);
+
+            if (count.HasValue)
             {
-                x.Id,
-                x.Name,
-            }).ToList().Select(x => new KeyValuePair<string, string>(x.Id.ToString(), x.Name));
+                query = query.Take(count.Value);
+            }
+
+            return query.To<T>().ToList();
         }
     }
 }

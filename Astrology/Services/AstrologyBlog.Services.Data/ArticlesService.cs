@@ -18,19 +18,20 @@
             this.articlesRepository = articlesRepository;
         }
 
-        public async Task CreateAsync(CreateArticleInputModel input)
+        public async Task<int> CreateAsync(string name, string description, string imageUrl, int categoryId, string userId)
         {
             var article = new Article
             {
-                CategoryId = input.CategoryId,
-                Name = input.Name,
-                Description = input.Description,
-                ImageUrl = input.ImageUrl,
-                Comments = input.Comments,
+                Name = name,
+                Description = description,
+                ImageUrl = imageUrl,
+                CategoryId = categoryId,
+                CreatedByUserId = userId,
             };
 
             await this.articlesRepository.AddAsync(article);
             await this.articlesRepository.SaveChangesAsync();
+            return article.Id;
         }
 
         public IEnumerable<T> GetAll<T>(int? count = null)

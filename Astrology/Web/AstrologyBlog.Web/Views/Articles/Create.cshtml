@@ -1,7 +1,7 @@
 ﻿@model AstrologyBlog.Web.ViewModels.Articles.CreateArticleInputModel
 @{ 
     this.ViewData["Title"] = "Add new article";
-    var categoryItems = this.Model.CategoriesItems.Select(x => new SelectListItem(x.Value, x.Key));
+    var categoryItems = this.Model.Categories.Select(x => new SelectListItem(x.Name, x.Id.ToString()));
 }
 
 <form method="post" class="col-md-6 offset-md-3">
