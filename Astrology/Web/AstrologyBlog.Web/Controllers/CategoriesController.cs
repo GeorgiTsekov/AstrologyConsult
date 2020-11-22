@@ -6,16 +6,16 @@
 
     public class CategoriesController : Controller
     {
-        private readonly IGetAllCategoriesService getAllCategoriesService;
+        private readonly ICategoriesService categoriesService;
 
-        public CategoriesController(IGetAllCategoriesService getAllCategoriesService)
+        public CategoriesController(ICategoriesService categoriesService)
         {
-            this.getAllCategoriesService = getAllCategoriesService;
+            this.categoriesService = categoriesService;
         }
 
         public IActionResult ByName(string name)
         {
-            var viewModel = this.getAllCategoriesService.GetByName<CategoryViewModel>(name);
+            var viewModel = this.categoriesService.GetByName<CategoryViewModel>(name);
 
             return this.View(viewModel);
         }

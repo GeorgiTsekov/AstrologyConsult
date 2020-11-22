@@ -1,30 +1,26 @@
 ﻿namespace AstrologyBlog.Web.Controllers
 {
     using System.Diagnostics;
-    using System.Linq;
 
-    using AstrologyBlog.Data.Common.Repositories;
-    using AstrologyBlog.Data.Models;
     using AstrologyBlog.Services.Data;
-    using AstrologyBlog.Services.Mapping;
     using AstrologyBlog.Web.ViewModels;
     using AstrologyBlog.Web.ViewModels.Home;
     using Microsoft.AspNetCore.Mvc;
 
     public class HomeController : BaseController
     {
-        private readonly IGetAllCategoriesService getAllCategoriesService;
+        private readonly ICategoriesService categoriesService;
 
-        public HomeController(IGetAllCategoriesService getAllCategoriesService)
+        public HomeController(ICategoriesService categoriesService)
         {
-            this.getAllCategoriesService = getAllCategoriesService;
+            this.categoriesService = categoriesService;
         }
 
         public IActionResult Index()
         {
             var viewModel = new IndexViewModel
             {
-                Categories = this.getAllCategoriesService.GetAll<IndexCategoryViewModel>(),
+                Categories = this.categoriesService.GetAll<IndexCategoryViewModel>(),
             };
             return this.View(viewModel);
         }

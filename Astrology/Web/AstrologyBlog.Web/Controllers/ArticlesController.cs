@@ -1,6 +1,7 @@
 ﻿namespace AstrologyBlog.Web.Controllers
 {
     using System.Threading.Tasks;
+
     using AstrologyBlog.Data.Models;
     using AstrologyBlog.Services.Data;
     using AstrologyBlog.Web.ViewModels.Articles;
@@ -10,16 +11,16 @@
 
     public class ArticlesController : Controller
     {
-        private readonly ICategoriesService categoriesService;
+        private readonly IArticlesCategoriesService articlesCategoriesService;
         private readonly IArticlesService articlesService;
         private readonly UserManager<ApplicationUser> userManager;
 
         public ArticlesController(
-            ICategoriesService categoriesService,
+            IArticlesCategoriesService articlesCategoriesService,
             IArticlesService articlesService,
             UserManager<ApplicationUser> userManager)
         {
-            this.categoriesService = categoriesService;
+            this.articlesCategoriesService = articlesCategoriesService;
             this.articlesService = articlesService;
             this.userManager = userManager;
         }
@@ -36,10 +37,10 @@
         [Authorize]
         public IActionResult Create()
         {
-            var categories = this.categoriesService.GetAll<CategoryDropDowwViewModel>();
+            var articleCategories = this.articlesCategoriesService.GetAll<CategoryDropDowwViewModel>();
             var viewModel = new CreateArticleInputModel
             {
-                Categories = categories,
+                ArticlesCategories = articleCategories,
             };
 
             return this.View(viewModel);
@@ -55,7 +56,7 @@
             }
 
             var user = await this.userManager.GetUserAsync(this.User);
-            var articleId = await this.articlesService.CreateAsync(input.Name, input.Description, input.ImageUrl, input.CategoryId, user.Id);
+            var articleId = await this.articlesService.CreateAsync(input.Name, input.Description, input.ImageUrl, input.ArticlesCategoryId, user.Id);
 
             return this.RedirectToAction("ById", new { id = articleId });
         }

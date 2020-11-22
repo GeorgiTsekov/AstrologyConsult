@@ -1,9 +1,9 @@
-﻿using AstrologyBlog.Data.Models;
-using AstrologyBlog.Services.Mapping;
-
-namespace AstrologyBlog.Web.ViewModels.Articles
+﻿namespace AstrologyBlog.Web.ViewModels.Articles
 {
-    public class CategoryDropDowwViewModel : IMapFrom<Category>
+    using AstrologyBlog.Data.Models;
+    using AstrologyBlog.Services.Mapping;
+
+    public class CategoryDropDowwViewModel : IMapFrom<ArticlesCategory>
     {
         public int Id { get; set; }
 

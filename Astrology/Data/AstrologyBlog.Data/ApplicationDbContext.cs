@@ -30,7 +30,21 @@
 
         public DbSet<Category> Categories { get; set; }
 
+        public DbSet<ArticlesCategory> ArticlesCategories { get; set; }
+
         public DbSet<Comment> Comments { get; set; }
+
+        public DbSet<Vote> Votes { get; set; }
+
+        public DbSet<Event> Events { get; set; }
+
+        public DbSet<Video> Videos { get; set; }
+
+        public DbSet<Order> Orders { get; set; }
+
+        public DbSet<About> Abouts { get; set; }
+
+        public DbSet<Contact> Contacts { get; set; }
 
         public override int SaveChanges() => this.SaveChanges(true);
 

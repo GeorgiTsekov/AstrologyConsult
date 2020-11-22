@@ -9,6 +9,7 @@
         public Article()
         {
             this.Comments = new HashSet<Comment>();
+            this.Votes = new HashSet<Vote>();
         }
 
         public string Name { get; set; }
@@ -21,10 +22,12 @@
 
         public virtual ApplicationUser CreatedByUser { get; set; }
 
-        public int CategoryId { get; set; }
+        public int ArticlesCategoryId { get; set; }
 
-        public virtual Category Category { get; set; }
+        public virtual ArticlesCategory ArticlesCategory { get; set; }
 
         public ICollection<Comment> Comments { get; set; }
+
+        public ICollection<Vote> Votes { get; set; }
     }
 }

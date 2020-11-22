@@ -7,7 +7,6 @@
     using AstrologyBlog.Data.Common.Repositories;
     using AstrologyBlog.Data.Models;
     using AstrologyBlog.Services.Mapping;
-    using AstrologyBlog.Web.ViewModels.Articles;
 
     public class ArticlesService : IArticlesService
     {
@@ -18,14 +17,14 @@
             this.articlesRepository = articlesRepository;
         }
 
-        public async Task<int> CreateAsync(string name, string description, string imageUrl, int categoryId, string userId)
+        public async Task<int> CreateAsync(string name, string description, string imageUrl, int articlesCategoryId, string userId)
         {
             var article = new Article
             {
                 Name = name,
                 Description = description,
                 ImageUrl = imageUrl,
-                CategoryId = categoryId,
+                ArticlesCategoryId = articlesCategoryId,
                 CreatedByUserId = userId,
             };
 

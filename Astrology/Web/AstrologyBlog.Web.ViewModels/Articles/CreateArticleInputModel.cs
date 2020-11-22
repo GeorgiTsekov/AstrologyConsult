@@ -3,8 +3,6 @@
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    using AstrologyBlog.Data.Models;
-
     public class CreateArticleInputModel
     {
         [Required]
@@ -20,9 +18,9 @@
         public string ImageUrl { get; set; }
 
         [Range(1, int.MaxValue)]
-        [Display(Name = "Category")]
-        public int CategoryId { get; set; }
+        [Display(Name = "ArticlesCategory")]
+        public int ArticlesCategoryId { get; set; }
 
-        public IEnumerable<CategoryDropDowwViewModel> Categories { get; set; }
+        public IEnumerable<CategoryDropDowwViewModel> ArticlesCategories { get; set; }
     }
 }
