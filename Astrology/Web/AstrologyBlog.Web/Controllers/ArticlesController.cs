@@ -25,11 +25,11 @@
             this.userManager = userManager;
         }
 
-        public IActionResult All()
+        public IActionResult All(int id = 1)
         {
             var viewModel = new IndexArticleViewModel
             {
-                Articles = this.articlesService.GetAll<ArticleViewModel>(),
+                Articles = this.articlesService.GetAll<ArticleViewModel>(id, 12),
             };
             return this.View(viewModel);
         }

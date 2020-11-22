@@ -33,15 +33,16 @@
             return article.Id;
         }
 
-        public IEnumerable<T> GetAll<T>(int? count = null)
+        public IEnumerable<T> GetAll<T>(int page, int itemsPerPage = 12)
         {
-            IQueryable<Article> query = this.articlesRepository.All().OrderBy(x => x.Name);
-            if (count.HasValue)
-            {
-                query = query.Take(count.Value);
-            }
+            var articles = this.articlesRepository.All()
+                .OrderByDescending(x => x.Name)
+                .Skip((page - 1) * itemsPerPage)
+                .Take(itemsPerPage)
+                .To<T>()
+                .ToList();
 
-            return query.To<T>().ToList();
+            return articles;
         }
     }
 }
