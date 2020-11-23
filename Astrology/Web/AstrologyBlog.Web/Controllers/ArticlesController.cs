@@ -27,9 +27,13 @@
 
         public IActionResult All(int id = 1)
         {
+            const int ItemsPerPage = 10;
             var viewModel = new IndexArticleViewModel
             {
-                Articles = this.articlesService.GetAll<ArticleViewModel>(id, 12),
+                ItemsPerPage = ItemsPerPage,
+                PageNumber = id,
+                Articles = this.articlesService.GetAll<ArticleViewModel>(id, ItemsPerPage),
+                ArticlesCount = this.articlesService.GetCount(),
             };
             return this.View(viewModel);
         }

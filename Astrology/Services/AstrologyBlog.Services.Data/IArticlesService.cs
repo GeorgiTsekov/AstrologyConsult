@@ -8,5 +8,7 @@
         Task<int> CreateAsync(string name, string description, string imageUrl, int articleCategoryId, string userId);
 
         IEnumerable<T> GetAll<T>(int page, int itemsPerPage = 12);
+
+        int GetCount();
     }
 }

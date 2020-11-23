@@ -44,5 +44,10 @@
 
             return articles;
         }
+
+        public int GetCount()
+        {
+            return this.articlesRepository.All().Count();
+        }
     }
 }
