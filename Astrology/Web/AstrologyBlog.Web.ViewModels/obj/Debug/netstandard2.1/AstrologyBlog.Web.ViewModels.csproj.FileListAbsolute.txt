@@ -10,7 +10,7 @@ C:\Dev\CSharpAspNetCoreOct2020\Astrology\Web\AstrologyBlog.Web.ViewModels\bin\De
 C:\Dev\CSharpAspNetCoreOct2020\Astrology\Web\AstrologyBlog.Web.ViewModels\obj\Debug\netstandard2.1\AstrologyBlog.Web.ViewModels.csprojAssemblyReference.cache
 C:\Dev\CSharpAspNetCoreOct2020\Astrology\Web\AstrologyBlog.Web.ViewModels\obj\Debug\netstandard2.1\AstrologyBlog.Web.ViewModels.AssemblyInfoInputs.cache
 C:\Dev\CSharpAspNetCoreOct2020\Astrology\Web\AstrologyBlog.Web.ViewModels\obj\Debug\netstandard2.1\AstrologyBlog.Web.ViewModels.AssemblyInfo.cs
-C:\Dev\CSharpAspNetCoreOct2020\Astrology\Web\AstrologyBlog.Web.ViewModels\obj\Debug\netstandard2.1\AstrologyBlog.Web.ViewModels.csproj.CoreCompileInputs.cache
 C:\Dev\CSharpAspNetCoreOct2020\Astrology\Web\AstrologyBlog.Web.ViewModels\obj\Debug\netstandard2.1\AstrologyBlog.Web.ViewModels.csproj.CopyComplete
 C:\Dev\CSharpAspNetCoreOct2020\Astrology\Web\AstrologyBlog.Web.ViewModels\obj\Debug\netstandard2.1\AstrologyBlog.Web.ViewModels.dll
 C:\Dev\CSharpAspNetCoreOct2020\Astrology\Web\AstrologyBlog.Web.ViewModels\obj\Debug\netstandard2.1\AstrologyBlog.Web.ViewModels.pdb
+C:\Dev\CSharpAspNetCoreOct2020\Astrology\Web\AstrologyBlog.Web.ViewModels\obj\Debug\netstandard2.1\AstrologyBlog.Web.ViewModels.csproj.CoreCompileInputs.cache

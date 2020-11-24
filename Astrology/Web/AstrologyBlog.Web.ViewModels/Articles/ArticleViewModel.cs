@@ -1,6 +1,5 @@
 ﻿namespace AstrologyBlog.Web.ViewModels.Articles
 {
-    using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Net;
@@ -10,7 +9,7 @@
     using AstrologyBlog.Services.Mapping;
     using AutoMapper;
 
-    public class ArticleViewModel : IMapFrom<Article>
+    public class ArticleViewModel : IMapFrom<Article>, IHaveCustomMappings
     {
         public int Id { get; set; }
 
@@ -20,11 +19,11 @@
 
         public string ImageUrl { get; set; }
 
-        public string Url => $"/f/{this.Name.Replace(' ', '-')}";
-
         public string CreatedByUserUserName { get; set; }
 
         public int CategoryId { get; set; }
+
+        public IEnumerable<CommentInArticleViewModel> Comments { get; set; }
 
         public string ShortDescription
         {
@@ -37,16 +36,14 @@
             }
         }
 
-        //public void CreateMapping(IProfileExpression configuration)
-        //{
-        //    configuration.CreateMap<Article, ArticleViewModel>()
-        //        .ForMember(x => x.ImageUrl, opt =>
-        //        opt.MapFrom(x =>
-        //        x.ImageUrl != null ?
-        //        x.ImageUrl :
-        //        "/images/articles/" + x.ImageUrl + "." + x.ImageUrl));
-        //}
-
-        public IEnumerable<CommentInArticleViewModel> Comments { get; set; }
+        public void CreateMappings(IProfileExpression configuration)
+        {
+            configuration.CreateMap<Article, ArticleViewModel>()
+                .ForMember(x => x.ImageUrl, opt =>
+                    opt.MapFrom(x =>
+                        x.Images.FirstOrDefault().RemoteImageUrl != null ?
+                        x.Images.FirstOrDefault().RemoteImageUrl :
+                        "/images/articles/" + x.Images.FirstOrDefault().Id + "." + x.Images.FirstOrDefault().Extension));
+        }
     }
 }

@@ -219,7 +219,6 @@ namespace AstrologyBlog.Data.Migrations
                     DeletedOn = table.Column<DateTime>(nullable: true),
                     Name = table.Column<string>(nullable: true),
                     Description = table.Column<string>(nullable: true),
-                    ImageUrl = table.Column<string>(nullable: true),
                     CreatedByUserId = table.Column<string>(nullable: true),
                     ArticlesCategoryId = table.Column<int>(nullable: false)
                 },
@@ -422,6 +421,37 @@ namespace AstrologyBlog.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Images",
+                columns: table => new
+                {
+                    Id = table.Column<string>(nullable: false),
+                    CreatedOn = table.Column<DateTime>(nullable: false),
+                    ModifiedOn = table.Column<DateTime>(nullable: true),
+                    IsDeleted = table.Column<bool>(nullable: false),
+                    DeletedOn = table.Column<DateTime>(nullable: true),
+                    ArticleId = table.Column<int>(nullable: false),
+                    Extension = table.Column<string>(nullable: true),
+                    RemoteImageUrl = table.Column<string>(nullable: true),
+                    AddedByUserId = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Images", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Images_AspNetUsers_AddedByUserId",
+                        column: x => x.AddedByUserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Images_Articles_ArticleId",
+                        column: x => x.ArticleId,
+                        principalTable: "Articles",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Votes",
                 columns: table => new
                 {
@@ -572,6 +602,21 @@ namespace AstrologyBlog.Data.Migrations
                 column: "IsDeleted");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Images_AddedByUserId",
+                table: "Images",
+                column: "AddedByUserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Images_ArticleId",
+                table: "Images",
+                column: "ArticleId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Images_IsDeleted",
+                table: "Images",
+                column: "IsDeleted");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Orders_CategoryId",
                 table: "Orders",
                 column: "CategoryId");
@@ -640,6 +685,9 @@ namespace AstrologyBlog.Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "Events");
+
+            migrationBuilder.DropTable(
+                name: "Images");
 
             migrationBuilder.DropTable(
                 name: "Orders");

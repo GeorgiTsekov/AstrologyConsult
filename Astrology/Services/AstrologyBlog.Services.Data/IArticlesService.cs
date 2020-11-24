@@ -3,11 +3,13 @@
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
+    using AstrologyBlog.Web.ViewModels.Articles;
+
     public interface IArticlesService
     {
-        Task<int> CreateAsync(string name, string description, string imageUrl, int articleCategoryId, string userId);
+        Task<int> CreateAsync(CreateArticleInputModel input, string userId, string imagePath);
 
-        IEnumerable<T> GetAll<T>(int page, int itemsPerPage = 12);
+        IEnumerable<T> GetAll<T>(int page, int itemsPerPage = 10);
 
         int GetCount();
     }

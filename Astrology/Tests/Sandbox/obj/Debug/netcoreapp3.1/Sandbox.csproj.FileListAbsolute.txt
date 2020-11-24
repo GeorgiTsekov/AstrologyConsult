@@ -93,3 +93,5 @@ C:\Dev\CSharpAspNetCoreOct2020\Astrology\Tests\Sandbox\obj\Debug\netcoreapp3.1\S
 C:\Dev\CSharpAspNetCoreOct2020\Astrology\Tests\Sandbox\obj\Debug\netcoreapp3.1\Sandbox.genruntimeconfig.cache
 C:\Dev\CSharpAspNetCoreOct2020\Astrology\Tests\Sandbox\bin\Debug\netcoreapp3.1\AstrologyBlog.Web.ViewModels.dll
 C:\Dev\CSharpAspNetCoreOct2020\Astrology\Tests\Sandbox\bin\Debug\netcoreapp3.1\AstrologyBlog.Web.ViewModels.pdb
+C:\Dev\CSharpAspNetCoreOct2020\Astrology\Tests\Sandbox\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Http.Features.dll
+C:\Dev\CSharpAspNetCoreOct2020\Astrology\Tests\Sandbox\bin\Debug\netcoreapp3.1\System.IO.Pipelines.dll

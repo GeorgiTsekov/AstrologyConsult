@@ -204,9 +204,6 @@ namespace AstrologyBlog.Data.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ImageUrl")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
@@ -429,6 +426,46 @@ namespace AstrologyBlog.Data.Migrations
                     b.HasIndex("IsDeleted");
 
                     b.ToTable("Events");
+                });
+
+            modelBuilder.Entity("AstrologyBlog.Data.Models.Image", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("AddedByUserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("ArticleId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Extension")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("ModifiedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("RemoteImageUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AddedByUserId");
+
+                    b.HasIndex("ArticleId");
+
+                    b.HasIndex("IsDeleted");
+
+                    b.ToTable("Images");
                 });
 
             modelBuilder.Entity("AstrologyBlog.Data.Models.Order", b =>
@@ -744,6 +781,19 @@ namespace AstrologyBlog.Data.Migrations
                     b.HasOne("AstrologyBlog.Data.Models.ArticlesCategory", "ArticlesCategory")
                         .WithMany("Events")
                         .HasForeignKey("ArticlesCategoryId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("AstrologyBlog.Data.Models.Image", b =>
+                {
+                    b.HasOne("AstrologyBlog.Data.Models.ApplicationUser", "AddedByUser")
+                        .WithMany()
+                        .HasForeignKey("AddedByUserId");
+
+                    b.HasOne("AstrologyBlog.Data.Models.Article", "Article")
+                        .WithMany("Images")
+                        .HasForeignKey("ArticleId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
                 });

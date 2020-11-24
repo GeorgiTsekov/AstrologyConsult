@@ -10,13 +10,12 @@
         {
             this.Comments = new HashSet<Comment>();
             this.Votes = new HashSet<Vote>();
+            this.Images = new HashSet<Image>();
         }
 
         public string Name { get; set; }
 
         public string Description { get; set; }
-
-        public string ImageUrl { get; set; }
 
         public string CreatedByUserId { get; set; }
 
@@ -29,5 +28,7 @@
         public ICollection<Comment> Comments { get; set; }
 
         public ICollection<Vote> Votes { get; set; }
+
+        public virtual ICollection<Image> Images { get; set; }
     }
 }
