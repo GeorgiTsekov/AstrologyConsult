@@ -14,7 +14,7 @@
                 <div class="card-body">
                     <h5 class="card-title">@article.Name</h5>
                     <p class="card-text">@article.ShortDescription</p>
-                    <a href="#" class="btn btn-primary">Прочети цялата статия</a>
+                    <a asp-action="ById" asp-route-id="@article.Id" class="btn btn-primary">Прочети цялата статия</a>
                 </div>
             </div>
         </div>

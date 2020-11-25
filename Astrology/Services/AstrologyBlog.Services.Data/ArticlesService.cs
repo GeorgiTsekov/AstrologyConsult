@@ -69,6 +69,16 @@
             return articles;
         }
 
+        public T GetById<T>(int id)
+        {
+            var article = this.articlesRepository.AllAsNoTracking()
+                .Where(x => x.Id == id)
+                .To<T>()
+                .FirstOrDefault();
+
+            return article;
+        }
+
         public int GetCount()
         {
             return this.articlesRepository.All().Count();

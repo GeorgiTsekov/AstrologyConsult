@@ -80,5 +80,12 @@
             // return this.RedirectToAction("ById", new { id = articleId });
             return this.Redirect("/");
         }
+
+        public IActionResult ById(int id)
+        {
+            var article = this.articlesService.GetById<SingleArticleViewModel>(id);
+
+            return this.View(article);
+        }
     }
 }

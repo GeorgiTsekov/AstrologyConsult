@@ -461,3 +461,6 @@ C:\Dev\CSharpAspNetCoreOct2020\Astrology\Web\AstrologyBlog.Web\obj\Debug\netcore
 C:\Dev\CSharpAspNetCoreOct2020\Astrology\Web\AstrologyBlog.Web\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Http.Features.dll
 C:\Dev\CSharpAspNetCoreOct2020\Astrology\Web\AstrologyBlog.Web\bin\Debug\netcoreapp3.1\System.IO.Pipelines.dll
 C:\Dev\CSharpAspNetCoreOct2020\Astrology\Web\AstrologyBlog.Web\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_PagingPartial.cshtml.g.cs
+C:\Dev\CSharpAspNetCoreOct2020\Astrology\Web\AstrologyBlog.Web\bin\Debug\netcoreapp3.1\AngleSharp.dll
+C:\Dev\CSharpAspNetCoreOct2020\Astrology\Web\AstrologyBlog.Web\bin\Debug\netcoreapp3.1\AngleSharp.Css.dll
+C:\Dev\CSharpAspNetCoreOct2020\Astrology\Web\AstrologyBlog.Web\bin\Debug\netcoreapp3.1\HtmlSanitizer.dll

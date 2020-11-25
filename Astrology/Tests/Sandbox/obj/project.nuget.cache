@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "59OBN8ovD3hLe5/0C6Zpmlsz9I4kQTqOe9ujxSVSRV1XVLwAWtaDXagfMbMtOyf4KxdUhruLUOYZOVq/mEtrVA==",
+  "dgSpecHash": "aPtXAVbEBos1cEkEndqbCaHKPwi27P0ceIyr0MTHgY+frX9gw/F4AVy2t5PlSu56PoPqPgqOEQLJ6jP0yBnwKw==",
   "success": true,
   "projectFilePath": "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Tests\\Sandbox\\Sandbox.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\georg\\.nuget\\packages\\anglesharp\\0.14.0\\anglesharp.0.14.0.nupkg.sha512",
+    "C:\\Users\\georg\\.nuget\\packages\\anglesharp.css\\0.14.2\\anglesharp.css.0.14.2.nupkg.sha512",
     "C:\\Users\\georg\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\georg\\.nuget\\packages\\commandlineparser\\2.8.0\\commandlineparser.2.8.0.nupkg.sha512",
+    "C:\\Users\\georg\\.nuget\\packages\\htmlsanitizer\\5.0.355\\htmlsanitizer.5.0.355.nupkg.sha512",
     "C:\\Users\\georg\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.9\\microsoft.aspnetcore.cryptography.internal.3.1.9.nupkg.sha512",
     "C:\\Users\\georg\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\3.1.9\\microsoft.aspnetcore.cryptography.keyderivation.3.1.9.nupkg.sha512",
     "C:\\Users\\georg\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.0\\microsoft.aspnetcore.http.features.5.0.0.nupkg.sha512",

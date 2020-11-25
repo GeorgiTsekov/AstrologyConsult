@@ -557,6 +557,10 @@
       "frameworks": {
         "netstandard2.1": {
           "dependencies": {
+            "HtmlSanitizer": {
+              "target": "Package",
+              "version": "[5.0.355, )"
+            },
             "Microsoft.AspNetCore.Http.Features": {
               "target": "Package",
               "version": "[5.0.0, )"

@@ -1,3 +1,109 @@
-﻿@model AstrologyBlog.Web.ViewModels.Articles.ArticleViewModel
+﻿@model AstrologyBlog.Web.ViewModels.Articles.SingleArticleViewModel
+@{
+    this.ViewData["Title"] = Model.Name;
+}
 
+<div id="content" class="blog_page blog_details">
+    <!-- Our Services -->
+    <div id="blogs" class="blog_section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-9">
+                    <div class="eb_left">
+                        <div class="col-sm-12">
+                            <div class="blog_inner_matter">
+                                <div class="image">
+                                    <a href=""><img src="@Model.ImageUrl" class="wow fadeInDown animated"></a>
+                                </div>
+                                <div class="admin_and_comments wow fadeInDown animated">
+                                    <span class="blog_admin"><span><i class="fa fa-user-o"></i> Създадена от</span> <span><a href="">@Model.CreatedByUserUserName</a></span></span>
+                                    <span class="comments_date blog_admin"><span><i class="fa fa-comments-o"></i>@Model.Comments.Count коментара</span></span>
+                                    <span class="comments_date blog_dates"><span><i class="fa fa-clock-o"></i> @Model.CreatedOn.ToShortDateString()</span></span>
+                                </div>
+                                <h2 class="wow fadeInDown animated"><a href="">@this.ViewData["Title"]</a></h2>
+                                <p class="wow fadeInDown animated">@Model.Description</p>
+                            </div>
+
+
+                            <div class="comment-content wow bounceInUp animated">
+                                <div class="comments-wrapper">
+                                    <h3> Comments </h3>
+                                    <ol class="commentlist">
+                                        <li class="comment">
+                                            <div>
+                                                <img alt="" src="assets/image/member/member.png" class="avatar avatar-60 photo">
+                                                <div class="comment-text">
+                                                    <div class="ratings">
+                                                        <div class="rating-box">
+                                                            <div style="width:100%" class="rating"></div>
+                                                        </div>
+                                                    </div>
+                                                    <p class="meta">
+                                                        <strong>John Doe</strong>
+                                                        <span>–</span> <time>April 19, 2018</time>
+                                                    </p>
+                                                    <div class="description">
+                                                        <p>Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Nulla quis lorem ut libero malesuada feugiat. Proin eget tortor risus. Donec rutrum congue leo eget malesuada. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                        <p>Donec sollicitudin molestie malesuada. Vivamus suscipit tortor eget felis porttitor volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis lorem ut libero malesuada feugiat. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li><!-- #comment-## -->
+
+                                        <li class="comment">
+                                            <div>
+                                                <img alt="" src="assets/image/member/member2.png" class="avatar avatar-60 photo">
+                                                <div class="comment-text">
+                                                    <div class="ratings">
+                                                        <div class="rating-box">
+                                                            <div style="width:100%" class="rating"></div>
+                                                        </div>
+                                                    </div>
+                                                    <p class="meta">
+                                                        <strong>Stephen Smith</strong> <span>–</span> <time>June 02, 2018</time>
+                                                    </p>
+                                                    <div class="description">
+                                                        <p>Donec rutrum congue leo eget malesuada. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li><!-- #comment-## -->
+                                    </ol>
+                                    <!--commentlist-->
+                                </div>
+                                <!--comments-wrapper-->
+
+                                <div class="comments-form-wrapper clearfix comment-respond">
+                                    <h3>Leave A reply</h3>
+                                    <form class="comment-form" method="post" id="postComment" action="">
+                                        <div class="field">
+                                            <label for="name">Name<em class="required">*</em></label>
+                                            <input type="text" class="input-text" title="Name" value="" id="user" name="user_name">
+                                        </div>
+                                        <div class="field">
+                                            <label for="email">Email<em class="required">*</em></label>
+                                            <input type="text" class="input-text validate-email" title="Email" value="" id="email" name="user_email">
+                                        </div>
+                                        <div class="clear"></div>
+                                        <div class="field aw-blog-comment-area">
+                                            <label for="comment">Comment<em class="required">*</em></label>
+                                            <textarea rows="5" cols="50" class="input-text" title="Comment" id="comment" name="comment"></textarea>
+                                        </div>
+                                        <div style="width:96%" class="button-set">
+                                            <input type="hidden" value="1" name="blog_id">
+                                            <button type="submit" class="btn submit"><span><span>Add Comment</span></span></button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <!--comments-form-wrapper clearfix-->
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- right side -->
+            </div>
+        </div>
+    </div>
 
