@@ -1,5 +1,6 @@
 ﻿namespace AstrologyBlog.Web.ViewModels.Articles
 {
+    using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Net;
@@ -21,6 +22,8 @@
 
         public string CreatedByUserUserName { get; set; }
 
+        public DateTime CreatedOn { get; set; }
+
         public int CategoryId { get; set; }
 
         public IEnumerable<CommentInArticleViewModel> Comments { get; set; }
@@ -30,8 +33,8 @@
             get
             {
                 var description = WebUtility.HtmlDecode(Regex.Replace(this.Description, @"<[^>]+>", string.Empty));
-                return description.Length > 300
-                        ? description.Substring(0, 300) + "..."
+                return description.Length > 200
+                        ? description.Substring(0, 200) + "..."
                         : description;
             }
         }

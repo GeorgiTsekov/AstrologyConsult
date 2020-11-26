@@ -9,17 +9,39 @@
     <link href="~/css/responsive.css" rel="stylesheet" asp-append-version="true" />
     <link href="~/css/style.css" rel="stylesheet" asp-append-version="true" />
     <link href="~/css/site.min.css" rel="stylesheet" asp-append-version="true" />
+    <link href="~/vendor/owl.carousel/assets/owl.carousel.css" rel="stylesheet" asp-append-version="true" />
+    <link href="~/vendor/wow/animate.css" rel="stylesheet" asp-append-version="true" />
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,900&display=swap" rel="stylesheet" asp-append-version="true" />
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet" asp-append-version="true" />
 </head>
 <body>
     <header class="header-area">
-        <div class="navbar-area">
+        <div class="top-header">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-lg-8 col-md-12">
+                        <ul class="top-header-contact-info">
+                            <li><i class="fa fa-envelope-o"></i> info@yourcompany.com</li>
+                            <li><i class="fa fa-phone"></i> Emergancy Helpline: <a href="tel:+44587154756">+91 123 456-7890</a></li>
+                        </ul>
+                    </div>
 
+                    <div class="col-lg-4 col-md-12">
+                        <ul class="top-header-social header_account">
+                            <partial name="_LoginPartial" />
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="navbar-area">
             <div class="astrology-nav">
                 <div class="container">
                     <div class="row">
                         <div class="header_menu_wrapper">
                             <nav class="navbar navbar-expand-md navbar-light">
-
                                 <div class="collapse navbar-collapse mean-menu" style="display: block;">
                                     <ul class="navbar-nav">
                                         <li class="nav-item"><a class="navbar-brand text-dark" asp-area="" asp-controller="Home" asp-action="Index">Желание за нов живот</a></li>
@@ -39,7 +61,6 @@
                                         </li>
 
                                         <li class="nav-item"><a href="contact_us.html" class="navbar-brand text-dark">Контакти</a></li>
-                                        <partial name="_LoginPartial" />
                                     </ul>
                                 </div>
                             </nav>
@@ -52,7 +73,7 @@
         <!-- End Navbar Area -->
     </header>
     <section id="silder" class="silder_wrapper">
-        <div id="home-silder" class="owl-carousel owl-theme">
+        <div id="home-silder" class="item">
             <div class="item">
                 <img src="~/images/silder/32fe8e2e-9bd1-4c2e-a754-c5964d095cc7_mwu_banner2_0.jpg" alt="silder images" title="silder images">
             </div>
@@ -64,15 +85,6 @@
             @this.RenderBody()
         </main>
     </div>
-
-    @*<footer class="border-top footer text-muted">
-            <div class="container">
-                &copy; @DateTime.Now.Year - @GlobalConstants.SystemName - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-            </div>
-        </footer>*@
-    <!-- Footer Section -->
-    <hr />
-    <hr />
     <footer id="footer" class="footer">
         <div class="container-fluid">
             <div class="row">
@@ -92,6 +104,23 @@
     <script src="~/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.js" asp-append-version="true"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.min.js" asp-append-version="true"></script>
     <script src="~/js/site.min.js" asp-append-version="true"></script>
+    <script src="~/js/custom.js" asp-append-version="true"></script>
+    <script src="~/vendor/owl.carousel/owl.carousel.min.js" asp-append-version="true"></script>
+    <script src="~/vendor/wow/wow.min.js" asp-append-version="true"></script>
+    <script>
+        new WOW().init();
+        wow = new WOW(
+            {
+                boxClass: 'wow',      // default
+                animateClass: 'animated', // default
+                offset: 0,          // default
+                mobile: true,       // default
+                live: true        // default
+            }
+        )
+        wow.init();
+    </script>
+
     @await this.RenderSectionAsync("Scripts", required: false)
 
 </body>
