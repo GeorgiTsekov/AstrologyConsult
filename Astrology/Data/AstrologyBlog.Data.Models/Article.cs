@@ -1,6 +1,7 @@
 ﻿namespace AstrologyBlog.Data.Models
 {
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
 
     using AstrologyBlog.Data.Common.Models;
 
@@ -17,6 +18,7 @@
 
         public string Description { get; set; }
 
+        [Required]
         public string CreatedByUserId { get; set; }
 
         public virtual ApplicationUser CreatedByUser { get; set; }

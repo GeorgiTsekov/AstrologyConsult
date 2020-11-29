@@ -32,7 +32,7 @@
 
         public IActionResult All(int id = 1)
         {
-            const int ItemsPerPage = 10;
+            const int ItemsPerPage = 12;
             var viewModel = new IndexArticleViewModel
             {
                 ItemsPerPage = ItemsPerPage,
@@ -84,6 +84,10 @@
         public IActionResult ById(int id)
         {
             var article = this.articlesService.GetById<SingleArticleViewModel>(id);
+            if (article == null)
+            {
+                return this.NotFound();
+            }
 
             return this.View(article);
         }

@@ -9,7 +9,7 @@
     {
         Task<int> CreateAsync(CreateArticleInputModel input, string userId, string imagePath);
 
-        IEnumerable<T> GetAll<T>(int page, int itemsPerPage = 10);
+        IEnumerable<T> GetAll<T>(int page, int itemsPerPage = 12);
 
         int GetCount();
 

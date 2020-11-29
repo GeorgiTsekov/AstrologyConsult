@@ -57,7 +57,7 @@
             return article.Id;
         }
 
-        public IEnumerable<T> GetAll<T>(int page, int itemsPerPage = 10)
+        public IEnumerable<T> GetAll<T>(int page, int itemsPerPage = 12)
         {
             var articles = this.articlesRepository.All()
                 .OrderByDescending(x => x.CreatedOn)

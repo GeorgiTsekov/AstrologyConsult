@@ -9,6 +9,7 @@
     using AstrologyBlog.Data.Models;
     using AstrologyBlog.Services.Mapping;
     using AutoMapper;
+    using Ganss.XSS;
 
     public class ArticleViewModel : IMapFrom<Article>, IHaveCustomMappings
     {
@@ -18,11 +19,15 @@
 
         public string Description { get; set; }
 
+        public string SanitizedDescription => new HtmlSanitizer().Sanitize(this.Description);
+
         public string ImageUrl { get; set; }
 
         public string CreatedByUserUserName { get; set; }
 
         public DateTime CreatedOn { get; set; }
+
+        public int VotesCount { get; set; }
 
         public int CategoryId { get; set; }
 
@@ -32,7 +37,7 @@
         {
             get
             {
-                var description = WebUtility.HtmlDecode(Regex.Replace(this.Description, @"<[^>]+>", string.Empty));
+                var description = WebUtility.HtmlDecode(Regex.Replace(this.SanitizedDescription, @"<[^>]+>", string.Empty));
                 return description.Length > 200
                         ? description.Substring(0, 200) + "..."
                         : description;

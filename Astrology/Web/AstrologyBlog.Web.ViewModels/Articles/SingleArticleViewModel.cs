@@ -7,6 +7,7 @@
     using AstrologyBlog.Data.Models;
     using AstrologyBlog.Services.Mapping;
     using AutoMapper;
+    using Ganss.XSS;
 
     public class SingleArticleViewModel : IMapFrom<Article>, IMapTo<Article>, IHaveCustomMappings
     {
@@ -15,6 +16,8 @@
         public string Name { get; set; }
 
         public string Description { get; set; }
+
+        public string SanitizedDescription => new HtmlSanitizer().Sanitize(this.Description);
 
         public DateTime CreatedOn { get; set; }
 
@@ -31,6 +34,10 @@
         public void CreateMappings(IProfileExpression configuration)
         {
             configuration.CreateMap<Article, SingleArticleViewModel>()
+                .ForMember(x => x.VotesCount, opt =>
+                {
+                    opt.MapFrom(a => a.Votes.Sum(v => (int)v.Type));
+                })
                 .ForMember(x => x.ImageUrl, opt =>
                     opt.MapFrom(x =>
                         x.Images.FirstOrDefault().RemoteImageUrl != null ?

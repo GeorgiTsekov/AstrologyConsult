@@ -18,6 +18,7 @@ namespace AstrologyBlog.Data.Models
             this.Logins = new HashSet<IdentityUserLogin<string>>();
             this.Articles = new HashSet<Article>();
             this.Comments = new HashSet<Comment>();
+            this.Votes = new HashSet<Vote>();
         }
 
         // Audit info
@@ -39,5 +40,7 @@ namespace AstrologyBlog.Data.Models
         public virtual ICollection<Article> Articles { get; set; }
 
         public virtual ICollection<Comment> Comments { get; set; }
+
+        public virtual ICollection<Vote> Votes { get; set; }
     }
 }

@@ -28,24 +28,29 @@
                                     <img src="@article.ImageUrl" class="wow fadeInDown animated" alt="...">
                                 </a>
                                 <div class="blog_date  wow fadeInDown animated">
-                                    <span>@article.CreatedOn.ToShortDateString()<span>
+                                    @article.CreatedOn.ToShortDateString()
                                 </div>
                             </div>
                             <div class="admin_and_comments wow fadeInDown animated">
                                 <span class="blog_admin">
-                                    <span><i class="fa fa-user-o"></i> Създадена от</span>
+                                    <span><i class="fa fa-user"></i> Създадена от</span>
                                     <span>
                                         <a>@article.CreatedByUserUserName</a>
                                     </span>
                                 </span>
                                 <span class="comments_date">
                                     <span>
-                                        <i class="fa fa-comments-o"></i> @article.Comments.Count() коментара
+                                        <i class="fa fa-comments"></i> @article.Comments.Count() коментара
+                                    </span>
+                                </span>
+                                <span class="votes_date">
+                                    <span>
+                                        <i class="fa fa-heart"></i> @article.VotesCount харесвания
                                     </span>
                                 </span>
                             </div>
                             <h3 class="wow fadeInDown animated"><a>@article.Name</a></h3>
-                            <p class="wow fadeInDown animated">@article.ShortDescription</p>
+                            <p class="wow fadeInDown animated">@Html.Raw(article.ShortDescription)</p>
                             <a asp-action="ById" asp-route-id="@article.Id" class="btn wow fadeInDown animated">Прочети цялата статия</a>
                             <hr />
                         </div>

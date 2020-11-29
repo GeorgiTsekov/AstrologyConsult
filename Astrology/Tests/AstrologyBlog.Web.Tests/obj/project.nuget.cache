@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "/Edgoy61W52wB36I8cJUnqmpvgb7sO/CAZz+nF5FidatkS6ARyUU2+W5Lk/xZMNAAEgHwtGheZnOlywoAo6AAQ==",
+  "dgSpecHash": "EwqczXSVWK7jllx9Dx9TUU4Xr7qXUUSQJeHVsJXcU78o+cekTlPDYjo+pC9ZI1t6s9m6dU/S84rD5h1L700gQQ==",
   "success": true,
   "projectFilePath": "C:\\Dev\\CSharpAspNetCoreOct2020\\Astrology\\Tests\\AstrologyBlog.Web.Tests\\AstrologyBlog.Web.Tests.csproj",
   "expectedPackageFiles": [

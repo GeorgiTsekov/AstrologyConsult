@@ -16,12 +16,23 @@
                                     <a href=""><img src="@Model.ImageUrl" class="wow fadeInDown animated"></a>
                                 </div>
                                 <div class="admin_and_comments wow fadeInDown animated">
-                                    <span class="blog_admin"><span><i class="fa fa-user-o"></i> Създадена от</span> <span><a href="">@Model.CreatedByUserUserName</a></span></span>
-                                    <span class="comments_date blog_admin"><span><i class="fa fa-comments-o"></i>@Model.Comments.Count коментара</span></span>
-                                    <span class="comments_date blog_dates"><span><i class="fa fa-clock-o"></i> @Model.CreatedOn.ToShortDateString()</span></span>
+                                    <span class="blog_admin"><span><i class="fa fa-user"></i> Създадена от</span> <span><a href="">@Model.CreatedByUserUserName</a></span></span>
+                                    <form id="votesForm" method="post"></form>
+                                    <div>
+                                        <a href="#" onclick="sendVote(@Model.Id, true)">
+                                            <i class="fa fa-heart"></i>
+                                        </a>
+                                    </div>
+                                    <div id="votesCount">@Model.VotesCount харесвания</div>
+                                    <div>
+                                        <a href="#" onclick="sendVote(@Model.Id, false)">
+                                            <i class="fa fa-heart-broken"></i>
+                                        </a>
+                                    </div><span class="comments_date blog_admin"><span><i class="fa fa-comments"></i>@Model.Comments.Count коментара</span></span>
+                                    <span class="comments_date blog_dates"><span><i class="fa fa-calendar-alt"></i> @Model.CreatedOn.ToShortDateString()</span></span>
                                 </div>
                                 <h2 class="wow fadeInDown animated"><a href="">@this.ViewData["Title"]</a></h2>
-                                <p class="wow fadeInDown animated">@Model.Description</p>
+                                <p class="wow fadeInDown animated">@Html.Raw(Model.SanitizedDescription)</p>
                             </div>
 
 
@@ -31,7 +42,7 @@
                                     <ol class="commentlist">
                                         <li class="comment">
                                             <div>
-                                                <img alt="" src="assets/image/member/member.png" class="avatar avatar-60 photo">
+                                                <img alt="" class="img-fluid w-100" src="assets/image/member/member.png" class="avatar avatar-60 photo">
                                                 <div class="comment-text">
                                                     <div class="ratings">
                                                         <div class="rating-box">
@@ -101,3 +112,31 @@
         </div>
     </div>
 </div>
+
+@section Scripts {
+    <script>
+        //function showAddCommentForm(parentId) {
+        //    $("#AddCommentForm input[name='ParentId']").val(parentId);
+        //    $("#AddCommentForm").show();
+        //    $([document.documentElement, document.body]).animate({
+        //        scrollTop: $("#AddCommentForm").offset().top
+        //    }, 1000);
+        //}
+
+        function sendVote(articleId, isUpVote) {
+            var token = $("#votesForm input[name=__RequestVerificationToken]").val();
+            var json = { articleId: articleId, isUpVote: isUpVote };
+            $.ajax({
+                url: "/api/votes",
+                type: "POST",
+                data: JSON.stringify(json),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                headers: { 'X-CSRF-TOKEN': token },
+                success: function (data) {
+                    $("#votesCount").html(data.votesCount);
+                }
+            });
+        }
+    </script>
+}
