@@ -95,3 +95,6 @@ C:\Dev\CSharpAspNetCoreOct2020\Astrology\Tests\Sandbox\bin\Debug\netcoreapp3.1\A
 C:\Dev\CSharpAspNetCoreOct2020\Astrology\Tests\Sandbox\bin\Debug\netcoreapp3.1\AstrologyBlog.Web.ViewModels.pdb
 C:\Dev\CSharpAspNetCoreOct2020\Astrology\Tests\Sandbox\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Http.Features.dll
 C:\Dev\CSharpAspNetCoreOct2020\Astrology\Tests\Sandbox\bin\Debug\netcoreapp3.1\System.IO.Pipelines.dll
+C:\Dev\CSharpAspNetCoreOct2020\Astrology\Tests\Sandbox\bin\Debug\netcoreapp3.1\AngleSharp.dll
+C:\Dev\CSharpAspNetCoreOct2020\Astrology\Tests\Sandbox\bin\Debug\netcoreapp3.1\AngleSharp.Css.dll
+C:\Dev\CSharpAspNetCoreOct2020\Astrology\Tests\Sandbox\bin\Debug\netcoreapp3.1\HtmlSanitizer.dll

@@ -37,4 +37,8 @@
     <ProjectReference Include="..\AstrologyBlog.Web.Infrastructure\AstrologyBlog.Web.Infrastructure.csproj" />
     <ProjectReference Include="..\AstrologyBlog.Web.ViewModels\AstrologyBlog.Web.ViewModels.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Views\Comments\" />
+  </ItemGroup>
 </Project>

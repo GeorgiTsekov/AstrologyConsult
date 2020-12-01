@@ -16,8 +16,6 @@
 
         public string Content { get; set; }
 
-        public string SanitizedContent => new HtmlSanitizer().Sanitize(this.Content);
-
         public string UserUserName { get; set; }
     }
 }

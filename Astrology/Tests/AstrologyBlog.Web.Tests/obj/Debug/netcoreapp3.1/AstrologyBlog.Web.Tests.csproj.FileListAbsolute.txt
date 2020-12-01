@@ -526,3 +526,6 @@ C:\Dev\CSharpAspNetCoreOct2020\Astrology\Tests\AstrologyBlog.Web.Tests\obj\Debug
 C:\Dev\CSharpAspNetCoreOct2020\Astrology\Tests\AstrologyBlog.Web.Tests\obj\Debug\netcoreapp3.1\AstrologyBlog.Web.Tests.pdb
 C:\Dev\CSharpAspNetCoreOct2020\Astrology\Tests\AstrologyBlog.Web.Tests\obj\Debug\netcoreapp3.1\AstrologyBlog.Web.Tests.genruntimeconfig.cache
 C:\Dev\CSharpAspNetCoreOct2020\Astrology\Tests\AstrologyBlog.Web.Tests\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Http.Features.dll
+C:\Dev\CSharpAspNetCoreOct2020\Astrology\Tests\AstrologyBlog.Web.Tests\bin\Debug\netcoreapp3.1\AngleSharp.dll
+C:\Dev\CSharpAspNetCoreOct2020\Astrology\Tests\AstrologyBlog.Web.Tests\bin\Debug\netcoreapp3.1\AngleSharp.Css.dll
+C:\Dev\CSharpAspNetCoreOct2020\Astrology\Tests\AstrologyBlog.Web.Tests\bin\Debug\netcoreapp3.1\HtmlSanitizer.dll

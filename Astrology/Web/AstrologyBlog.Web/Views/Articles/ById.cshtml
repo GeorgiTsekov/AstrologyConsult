@@ -1,6 +1,40 @@
 ﻿@model AstrologyBlog.Web.ViewModels.Articles.SingleArticleViewModel
 @{
     this.ViewData["Title"] = Model.Name;
+    @functions {
+        void DisplayComments(int? parentId)
+        {
+            var commentsWithParent = this.Model.Comments.Where(x => x.ParentId == parentId);
+
+            if (!commentsWithParent.Any())
+            {
+                return;
+            }
+
+            @foreach (var comment in commentsWithParent)
+            {
+                <ol class="commentlist">
+                    <li class="comment">
+                        <div>
+                            <div class="comment-text">
+                                <p class="meta">
+                                    <strong>@comment.UserUserName</strong>
+                                    <span>–</span> <time>@comment.CreatedOn</time>
+                                </p>
+                                <div class="content">
+                                    <p>@comment.Content</p>
+                                </div>
+                                <div style="width:96%" class="button-set">
+                                    <button type="submit" class="btn submit" onclick="showAddCommentForm(@comment.Id)">Отговори</button>
+                                </div>
+                            </div>
+                            @{ DisplayComments(comment.Id); }
+                        </div>
+                    </li>
+                </ol>
+            }
+        }
+    }
 }
 
 <div id="content" class="blog_page blog_details">
@@ -18,93 +52,47 @@
                                 <div class="admin_and_comments wow fadeInDown animated">
                                     <span class="blog_admin"><span><i class="fa fa-user"></i> Създадена от</span> <span><a href="">@Model.CreatedByUserUserName</a></span></span>
                                     <form id="votesForm" method="post"></form>
-                                    <div>
+                                    <span>
                                         <a href="#" onclick="sendVote(@Model.Id, true)">
                                             <i class="fa fa-heart"></i>
                                         </a>
-                                    </div>
-                                    <div id="votesCount">@Model.VotesCount харесвания</div>
-                                    <div>
                                         <a href="#" onclick="sendVote(@Model.Id, false)">
                                             <i class="fa fa-heart-broken"></i>
                                         </a>
-                                    </div><span class="comments_date blog_admin"><span><i class="fa fa-comments"></i>@Model.Comments.Count коментара</span></span>
+                                        <a id="votesCount">@Model.VotesCount</a>
+                                        <a> харесвания</a>
+                                    </span>
+                                    <span class="comments_date blog_admin"><span><i class="fa fa-comments"></i>@Model.Comments.Count коментара</span></span>
                                     <span class="comments_date blog_dates"><span><i class="fa fa-calendar-alt"></i> @Model.CreatedOn.ToShortDateString()</span></span>
                                 </div>
                                 <h2 class="wow fadeInDown animated"><a href="">@this.ViewData["Title"]</a></h2>
                                 <p class="wow fadeInDown animated">@Html.Raw(Model.SanitizedDescription)</p>
                             </div>
-
-
                             <div class="comment-content wow bounceInUp animated">
                                 <div class="comments-wrapper">
-                                    <h3> Comments </h3>
-                                    <ol class="commentlist">
-                                        <li class="comment">
-                                            <div>
-                                                <img alt="" class="img-fluid w-100" src="assets/image/member/member.png" class="avatar avatar-60 photo">
-                                                <div class="comment-text">
-                                                    <div class="ratings">
-                                                        <div class="rating-box">
-                                                            <div style="width:100%" class="rating"></div>
-                                                        </div>
-                                                    </div>
-                                                    <p class="meta">
-                                                        <strong>John Doe</strong>
-                                                        <span>–</span> <time>April 19, 2018</time>
-                                                    </p>
-                                                    <div class="description">
-                                                        <p>Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Nulla quis lorem ut libero malesuada feugiat. Proin eget tortor risus. Donec rutrum congue leo eget malesuada. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                                        <p>Donec sollicitudin molestie malesuada. Vivamus suscipit tortor eget felis porttitor volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis lorem ut libero malesuada feugiat. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li><!-- #comment-## -->
-
-                                        <li class="comment">
-                                            <div>
-                                                <img alt="" src="assets/image/member/member2.png" class="avatar avatar-60 photo">
-                                                <div class="comment-text">
-                                                    <div class="ratings">
-                                                        <div class="rating-box">
-                                                            <div style="width:100%" class="rating"></div>
-                                                        </div>
-                                                    </div>
-                                                    <p class="meta">
-                                                        <strong>Stephen Smith</strong> <span>–</span> <time>June 02, 2018</time>
-                                                    </p>
-                                                    <div class="description">
-                                                        <p>Donec rutrum congue leo eget malesuada. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ol>
+                                    <div style="width:96%" class="button-set">
+                                        <button type="submit" class="btn submit" onclick="showAddCommentForm(0)"><span><span>Коментирай</span></span></button>
+                                    </div>
+                                    <hr />
+                                    @if (Model.Comments.Count > 0)
+                                    {
+                                        <h3>Коментари</h3>
+                                    }
+                                    @{ DisplayComments(null); }
                                 </div>
                                 <div class="comments-form-wrapper clearfix comment-respond">
-                                    <h3>Leave A reply</h3>
-                                    <form class="comment-form" method="post" id="postComment" action="">
-                                        <div class="field">
-                                            <label for="name">Name<em class="required">*</em></label>
-                                            <input type="text" class="input-text" title="Name" value="" id="user" name="user_name">
-                                        </div>
-                                        <div class="field">
-                                            <label for="email">Email<em class="required">*</em></label>
-                                            <input type="text" class="input-text validate-email" title="Email" value="" id="email" name="user_email">
-                                        </div>
-                                        <div class="clear"></div>
+                                    <form asp-controller="Comments" asp-action="Create" method="post" id="AddCommentForm" style="display: none">
+                                        <input type="hidden" name="ArticleId" value="@Model.Id" />
+                                        <input type="hidden" name="ParentId" value="0" />
                                         <div class="field aw-blog-comment-area">
-                                            <label for="comment">Comment<em class="required">*</em></label>
-                                            <textarea rows="5" cols="50" class="input-text" title="Comment" id="comment" name="comment"></textarea>
+                                            <textarea rows="5" cols="50" class="input-text" id="Content" name="Content"></textarea>
                                         </div>
                                         <div style="width:96%" class="button-set">
-                                            <input type="hidden" value="1" name="blog_id">
-                                            <button type="submit" class="btn submit"><span><span>Add Comment</span></span></button>
+                                            <button type="submit" class="btn submit"><span><span>Добави коментар</span></span></button>
                                         </div>
                                     </form>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -115,13 +103,13 @@
 
 @section Scripts {
     <script>
-        //function showAddCommentForm(parentId) {
-        //    $("#AddCommentForm input[name='ParentId']").val(parentId);
-        //    $("#AddCommentForm").show();
-        //    $([document.documentElement, document.body]).animate({
-        //        scrollTop: $("#AddCommentForm").offset().top
-        //    }, 1000);
-        //}
+        function showAddCommentForm(parentId) {
+            $("#AddCommentForm input[name='ParentId']").val(parentId);
+            $("#AddCommentForm").show();
+            $([document.documentElement, document.body]).animate({
+                scrollTop: $("#AddCommentForm").offset().top
+            }, 1000);
+        }
 
         function sendVote(articleId, isUpVote) {
             var token = $("#votesForm input[name=__RequestVerificationToken]").val();

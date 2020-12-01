@@ -193,6 +193,7 @@ namespace AstrologyBlog.Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("CreatedByUserId")
+                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime>("CreatedOn")
@@ -319,10 +320,7 @@ namespace AstrologyBlog.Data.Migrations
                     b.Property<int?>("ParentId")
                         .HasColumnType("int");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("UserId1")
+                    b.Property<string>("UserId")
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
@@ -333,7 +331,7 @@ namespace AstrologyBlog.Data.Migrations
 
                     b.HasIndex("ParentId");
 
-                    b.HasIndex("UserId1");
+                    b.HasIndex("UserId");
 
                     b.ToTable("Comments");
                 });
@@ -756,7 +754,9 @@ namespace AstrologyBlog.Data.Migrations
 
                     b.HasOne("AstrologyBlog.Data.Models.ApplicationUser", "CreatedByUser")
                         .WithMany("Articles")
-                        .HasForeignKey("CreatedByUserId");
+                        .HasForeignKey("CreatedByUserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("AstrologyBlog.Data.Models.Comment", b =>
@@ -773,7 +773,7 @@ namespace AstrologyBlog.Data.Migrations
 
                     b.HasOne("AstrologyBlog.Data.Models.ApplicationUser", "User")
                         .WithMany("Comments")
-                        .HasForeignKey("UserId1");
+                        .HasForeignKey("UserId");
                 });
 
             modelBuilder.Entity("AstrologyBlog.Data.Models.Event", b =>
@@ -823,7 +823,7 @@ namespace AstrologyBlog.Data.Migrations
                         .IsRequired();
 
                     b.HasOne("AstrologyBlog.Data.Models.ApplicationUser", "User")
-                        .WithMany()
+                        .WithMany("Votes")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
