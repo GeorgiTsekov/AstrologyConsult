@@ -19,7 +19,7 @@
                             <div class="comment-text">
                                 <p class="meta">
                                     <strong>@comment.UserUserName</strong>
-                                    <span>–</span> <time>@comment.CreatedOn</time>
+                                    <span>–</span> <time datetime="@comment.CreatedOn.ToString("O")"></time>
                                 </p>
                                 <div class="content">
                                     <p>@comment.Content</p>
@@ -50,7 +50,7 @@
                                     <a href=""><img src="@Model.ImageUrl" class="wow fadeInDown animated"></a>
                                 </div>
                                 <div class="admin_and_comments wow fadeInDown animated">
-                                    <span class="blog_admin"><span><i class="fa fa-user"></i> Създадена от</span> <span><a href="">@Model.CreatedByUserUserName</a></span></span>
+                                    <span class="blog_admin"><span><i class="fa fa-user"></i> Създадена от </span> <span><a>@Model.CreatedByUserUserName</a></span></span>
                                     <form id="votesForm" method="post"></form>
                                     <span>
                                         <a href="#" onclick="sendVote(@Model.Id, true)">
@@ -62,8 +62,8 @@
                                         <a id="votesCount">@Model.VotesCount</a>
                                         <a> харесвания</a>
                                     </span>
-                                    <span class="comments_date blog_admin"><span><i class="fa fa-comments"></i>@Model.Comments.Count коментара</span></span>
-                                    <span class="comments_date blog_dates"><span><i class="fa fa-calendar-alt"></i> @Model.CreatedOn.ToShortDateString()</span></span>
+                                    <span class="comments_date blog_admin"><span><i class="fa fa-comments"></i> @Model.Comments.Count коментара</span></span>
+                                    <span class="comments_date blog_dates"><span><i class="fa fa-calendar-alt"></i><time datetime="@Model.CreatedOn.ToString("O")"></time></span></span>
                                 </div>
                                 <h2 class="wow fadeInDown animated"><a href="">@this.ViewData["Title"]</a></h2>
                                 <p class="wow fadeInDown animated">@Html.Raw(Model.SanitizedDescription)</p>
