@@ -15,34 +15,31 @@
             this.votesRepository = votesRepository;
         }
 
-        public int GetVotes(int articleId)
+        public double GetAverageStarsFromVotes(int articleId)
         {
-            var votes = this.votesRepository.All()
-                 .Where(x => x.ArticleId == articleId).Sum(x => (int)x.Type);
-            return votes;
+            var averageStarsVote = this.votesRepository.All()
+                 .Where(x => x.ArticleId == articleId)
+                 .Average(x => x.StarsCount);
+            return averageStarsVote;
         }
 
-        public async Task VoteAsync(int articleId, string userId, bool isUpVote)
+        public async Task VoteAsync(int articleId, string userId, byte starsCount)
         {
             var vote = this.votesRepository.All()
                 .FirstOrDefault(x => x.ArticleId == articleId && x.UserId == userId);
 
-            if (vote != null)
-            {
-                vote.Type = isUpVote ? VoteType.UpVote : VoteType.Neutral;
-            }
-            else
+            if (vote == null)
             {
                 vote = new Vote
                 {
                     ArticleId = articleId,
                     UserId = userId,
-                    Type = isUpVote ? VoteType.UpVote : VoteType.Neutral,
                 };
 
                 await this.votesRepository.AddAsync(vote);
             }
 
+            vote.StarsCount = starsCount;
             await this.votesRepository.SaveChangesAsync();
         }
     }

@@ -56,11 +56,12 @@
                                                 <li class="nav-item"><a href="full_services_page.html" class="nav-link">Services Full Page</a></li>
                                             </ul>
                                         </li>
-
-                                        <li class="nav-item">
-                                            <a class="navbar-brand text-dark" asp-area="" asp-controller="Articles" asp-action="Create">Създай статия</a>
-                                        </li>
-
+                                        @if (this.User.Identity.IsAuthenticated)
+                                        {
+                                            <li class="nav-item">
+                                                <a class="navbar-brand text-dark" asp-area="" asp-controller="Articles" asp-action="Create">Създай статия</a>
+                                            </li>
+                                        }
                                         <li class="nav-item"><a href="contact_us.html" class="navbar-brand text-dark">Контакти</a></li>
                                     </ul>
                                 </div>

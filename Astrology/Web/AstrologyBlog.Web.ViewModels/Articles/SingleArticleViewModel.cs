@@ -9,7 +9,7 @@
     using AutoMapper;
     using Ganss.XSS;
 
-    public class SingleArticleViewModel : IMapFrom<Article>, IMapTo<Article>, IHaveCustomMappings
+    public class SingleArticleViewModel : IMapFrom<Article>, IHaveCustomMappings
     {
         public int Id { get; set; }
 
@@ -27,17 +27,15 @@
 
         public string ImageUrl { get; set; }
 
-        public int VotesCount { get; set; }
+        public double AverageStarsVote { get; set; }
 
         public ICollection<CommentInArticleViewModel> Comments { get; set; }
 
         public void CreateMappings(IProfileExpression configuration)
         {
             configuration.CreateMap<Article, SingleArticleViewModel>()
-                .ForMember(x => x.VotesCount, opt =>
-                {
-                    opt.MapFrom(a => a.Votes.Sum(v => (int)v.Type));
-                })
+                .ForMember(a => a.AverageStarsVote, opt =>
+                    opt.MapFrom(x => x.Votes.Count() == 0 ? 0 : x.Votes.Average(v => v.StarsCount)))
                 .ForMember(x => x.ImageUrl, opt =>
                     opt.MapFrom(x =>
                         x.Images.FirstOrDefault().RemoteImageUrl != null ?

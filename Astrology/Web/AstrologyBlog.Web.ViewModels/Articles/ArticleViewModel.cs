@@ -27,7 +27,7 @@
 
         public DateTime CreatedOn { get; set; }
 
-        public int VotesCount { get; set; }
+        public double AverageStarsVote { get; set; }
 
         public int CategoryId { get; set; }
 
@@ -47,6 +47,8 @@
         public void CreateMappings(IProfileExpression configuration)
         {
             configuration.CreateMap<Article, ArticleViewModel>()
+                .ForMember(a => a.AverageStarsVote, opt =>
+                    opt.MapFrom(a => a.Votes.Count() == 0 ? 0 : a.Votes.Average(v => v.StarsCount)))
                 .ForMember(x => x.ImageUrl, opt =>
                     opt.MapFrom(x =>
                         x.Images.FirstOrDefault().RemoteImageUrl != null ?

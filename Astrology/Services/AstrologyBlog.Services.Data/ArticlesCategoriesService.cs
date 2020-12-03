@@ -27,5 +27,13 @@
 
             return query.To<T>().ToList();
         }
+
+        public T GetByName<T>(string name)
+        {
+            var articlesCategory = this.articlesCategoriesRepository.All().Where(x => x.Name.Replace("-", " ") == name.Replace("-", " "))
+                .To<T>()
+                .FirstOrDefault();
+            return articlesCategory;
+        }
     }
 }

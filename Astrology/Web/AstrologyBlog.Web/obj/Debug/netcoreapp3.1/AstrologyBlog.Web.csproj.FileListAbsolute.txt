@@ -464,3 +464,4 @@ C:\Dev\CSharpAspNetCoreOct2020\Astrology\Web\AstrologyBlog.Web\bin\Debug\netcore
 C:\Dev\CSharpAspNetCoreOct2020\Astrology\Web\AstrologyBlog.Web\obj\Debug\netcoreapp3.1\AstrologyBlog.Web.csproj.CoreCompileInputs.cache
 C:\Dev\CSharpAspNetCoreOct2020\Astrology\Web\AstrologyBlog.Web\obj\Debug\netcoreapp3.1\AstrologyBlog.Web.MvcApplicationPartsAssemblyInfo.cs
 C:\Dev\CSharpAspNetCoreOct2020\Astrology\Web\AstrologyBlog.Web\obj\Debug\netcoreapp3.1\AstrologyBlog.Web.MvcApplicationPartsAssemblyInfo.cache
+C:\Dev\CSharpAspNetCoreOct2020\Astrology\Web\AstrologyBlog.Web\obj\Debug\netcoreapp3.1\Razor\Views\Articles\AllByCategoryName.cshtml.g.cs

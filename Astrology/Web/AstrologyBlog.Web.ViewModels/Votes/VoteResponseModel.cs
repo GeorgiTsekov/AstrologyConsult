@@ -2,6 +2,6 @@
 {
     public class VoteResponseModel
     {
-        public int VotesCount { get; set; }
+        public double AverageStarsVote { get; set; }
     }
 }

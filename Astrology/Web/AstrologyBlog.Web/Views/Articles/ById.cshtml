@@ -52,47 +52,60 @@
                                 <div class="admin_and_comments wow fadeInDown animated">
                                     <span class="blog_admin"><span><i class="fa fa-user"></i> Създадена от </span> <span><a>@Model.CreatedByUserUserName</a></span></span>
                                     <form id="votesForm" method="post"></form>
-                                    <span>
-                                        <a href="#" onclick="sendVote(@Model.Id, true)">
-                                            <i class="fa fa-heart"></i>
-                                        </a>
-                                        <a href="#" onclick="sendVote(@Model.Id, false)">
-                                            <i class="fa fa-heart-broken"></i>
-                                        </a>
-                                        <a id="votesCount">@Model.VotesCount</a>
-                                        <a> харесвания</a>
-                                    </span>
+                                    <span class="comments_date blog_admin"><span><i class="fa fa-star"></i> @Model.AverageStarsVote звезди</span></span>
                                     <span class="comments_date blog_admin"><span><i class="fa fa-comments"></i> @Model.Comments.Count коментара</span></span>
                                     <span class="comments_date blog_dates"><span><i class="fa fa-calendar-alt"></i><time datetime="@Model.CreatedOn.ToString("O")"></time></span></span>
                                 </div>
                                 <h2 class="wow fadeInDown animated"><a href="">@this.ViewData["Title"]</a></h2>
                                 <p class="wow fadeInDown animated">@Html.Raw(Model.SanitizedDescription)</p>
                             </div>
-                            <div class="comment-content wow bounceInUp animated">
-                                <div class="comments-wrapper">
-                                    <div style="width:96%" class="button-set">
-                                        <button type="submit" class="btn submit" onclick="showAddCommentForm(0)"><span><span>Коментирай</span></span></button>
-                                    </div>
-                                    <hr />
-                                    @if (Model.Comments.Count > 0)
-                                    {
-                                        <h3>Коментари</h3>
-                                    }
-                                    @{ DisplayComments(null); }
+                            @if (this.User.Identity.IsAuthenticated)
+                            {
+                                <div class="comment-form-rating">
+                                    <h3>Оцени със звезди</h3>
+                                    <p class="stars">
+                                        <a class="star-1" data-vote="1"><i class="fa fa-star"></i></a>
+                                        <a class="star-2" data-vote="2"><i class="fa fa-star"></i></a>
+                                        <a class="star-3" data-vote="3"><i class="fa fa-star"></i></a>
+                                        <a class="star-4" data-vote="4"><i class="fa fa-star"></i></a>
+                                        <a class="star-5" data-vote="5"><i class="fa fa-star"></i></a>
+                                        <a><span id="averageStarsVoteValue">@Model.AverageStarsVote.ToString("0.0")</span><span> / 5</span> </a>
+                                    </p>
                                 </div>
-                                <div class="comments-form-wrapper clearfix comment-respond">
-                                    <form asp-controller="Comments" asp-action="Create" method="post" id="AddCommentForm" style="display: none">
-                                        <input type="hidden" name="ArticleId" value="@Model.Id" />
-                                        <input type="hidden" name="ParentId" value="0" />
-                                        <div class="field aw-blog-comment-area">
-                                            <textarea rows="5" cols="50" class="input-text" id="Content" name="Content"></textarea>
-                                        </div>
+                                <hr />
+                                <div class="comment-content wow bounceInUp animated">
+                                    <div class="comments-wrapper">
                                         <div style="width:96%" class="button-set">
-                                            <button type="submit" class="btn submit"><span><span>Добави коментар</span></span></button>
+                                            <button type="submit" class="btn submit" onclick="showAddCommentForm(0)"><span><span>Коментирай</span></span></button>
                                         </div>
-                                    </form>
+                                        <hr />
+                                        @if (Model.Comments.Count > 0)
+                                        {
+                                            <h3>Коментари</h3>
+                                        }
+                                        @{ DisplayComments(null); }
+                                    </div>
+                                    <div class="comments-form-wrapper clearfix comment-respond">
+                                        <form asp-controller="Comments" asp-action="Create" method="post" id="AddCommentForm" style="display: none">
+                                            <input type="hidden" name="ArticleId" value="@Model.Id" />
+                                            <input type="hidden" name="ParentId" value="0" />
+                                            <div class="field aw-blog-comment-area">
+                                                <textarea rows="5" cols="50" class="input-text" id="Content" name="Content"></textarea>
+                                            </div>
+                                            <div style="width:96%" class="button-set">
+                                                <button type="submit" class="btn submit"><span><span>Добави коментар</span></span></button>
+                                            </div>
+                                        </form>
+                                    </div>
                                 </div>
-                            </div>
+                            }
+                            else
+                            {
+                                <h3>Логни се за да оцениш и да коментираш</h3>
+                                <div class="nav-item">
+                                    <a asp-area="Identity" asp-page="/Account/Login">Login</a>
+                                </div>
+                            }
                         </div>
                     </div>
                 </div>
@@ -100,31 +113,35 @@
         </div>
     </div>
 </div>
-
+<form method="post" id="antiForgeryForm"></form>
 @section Scripts {
     <script>
+        $("a[data-vote]").each(function (el) {
+            $(this).click(function () {
+                var starsCount = $(this).attr("data-vote");
+                var articleId = @Model.Id;
+                var antiForgeryToken = $('#antiForgeryForm input[name=__RequestVerificationToken]').val();
+                var data = { articleId: articleId, starsCount: Number(starsCount) };
+                $.ajax({
+                    type: "POST",
+                    url: "/api/Votes",
+                    data: JSON.stringify(data),
+                    headers: {
+                        'X-CSRF-TOKEN': antiForgeryToken
+                    },
+                    success: function (data) {
+                        $('#averageStarsVoteValue').html(data.averageStarsVote);
+                    },
+                    contentType: 'application/json',
+                });
+            })
+        });
         function showAddCommentForm(parentId) {
             $("#AddCommentForm input[name='ParentId']").val(parentId);
             $("#AddCommentForm").show();
             $([document.documentElement, document.body]).animate({
                 scrollTop: $("#AddCommentForm").offset().top
             }, 1000);
-        }
-
-        function sendVote(articleId, isUpVote) {
-            var token = $("#votesForm input[name=__RequestVerificationToken]").val();
-            var json = { articleId: articleId, isUpVote: isUpVote };
-            $.ajax({
-                url: "/api/votes",
-                type: "POST",
-                data: JSON.stringify(json),
-                contentType: "application/json; charset=utf-8",
-                dataType: "json",
-                headers: { 'X-CSRF-TOKEN': token },
-                success: function (data) {
-                    $("#votesCount").html(data.votesCount);
-                }
-            });
-        }
+        };
     </script>
 }

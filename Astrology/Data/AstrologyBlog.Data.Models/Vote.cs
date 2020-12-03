@@ -15,6 +15,6 @@
 
         public virtual ApplicationUser User { get; set; }
 
-        public VoteType Type { get; set; }
+        public byte StarsCount { get; set; }
     }
 }
