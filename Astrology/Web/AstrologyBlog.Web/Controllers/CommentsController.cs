@@ -1,16 +1,14 @@
-﻿using AstrologyBlog.Data.Models;
-using AstrologyBlog.Services.Data;
-using AstrologyBlog.Web.ViewModels.Comments;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace AstrologyBlog.Web.Controllers
+﻿namespace AstrologyBlog.Web.Controllers
 {
+    using System.Threading.Tasks;
+
+    using AstrologyBlog.Data.Models;
+    using AstrologyBlog.Services.Data;
+    using AstrologyBlog.Web.ViewModels.Comments;
+    using Microsoft.AspNetCore.Authorization;
+    using Microsoft.AspNetCore.Identity;
+    using Microsoft.AspNetCore.Mvc;
+
     public class CommentsController : Controller
     {
         private readonly ICommentsService commentsService;

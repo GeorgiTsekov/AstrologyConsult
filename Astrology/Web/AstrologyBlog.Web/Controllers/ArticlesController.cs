@@ -2,7 +2,7 @@
 {
     using System;
     using System.Threading.Tasks;
-
+    using AstrologyBlog.Common;
     using AstrologyBlog.Data.Models;
     using AstrologyBlog.Services.Data;
     using AstrologyBlog.Web.ViewModels.Articles;
@@ -43,7 +43,7 @@
             return this.View(viewModel);
         }
 
-        [Authorize]
+        [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
         public IActionResult Create()
         {
             var articleCategories = this.articlesCategoriesService.GetAll<CategoryDropDowwViewModel>();

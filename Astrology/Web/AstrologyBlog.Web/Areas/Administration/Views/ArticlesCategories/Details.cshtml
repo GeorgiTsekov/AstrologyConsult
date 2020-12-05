@@ -1,0 +1,57 @@
+﻿@model AstrologyBlog.Data.Models.ArticlesCategory
+
+@{
+    ViewData["Title"] = "Детайли";
+}
+
+<section class="main_breadcrumb">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="breadcrumb-content">
+                <h2>@this.ViewData["Title"]</h2>
+            </div>
+        </div>
+    </div>
+</section>
+<hr />
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">
+            Име
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class="col-sm-2">
+            Изтрита
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IsDeleted)
+        </dd>
+        <dt class="col-sm-2">
+            Изтрита на
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DeletedOn)
+        </dd>
+        <dt class="col-sm-2">
+            Създадена на
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CreatedOn)
+        </dd>
+        <dt class="col-sm-2">
+            Модифицирана на
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ModifiedOn)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" class="btn btn-primary" asp-route-id="@Model.Id">Редактирай</a>
+    <a asp-action="Index" class="btn btn-primary">Обратно към категориите</a>
+</div>
+<hr />
+<hr />

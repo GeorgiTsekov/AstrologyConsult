@@ -1,0 +1,66 @@
+﻿@model IEnumerable<AstrologyBlog.Data.Models.ArticlesCategory>
+
+@{
+    ViewData["Title"] = "Категория на статиите";
+}
+<hr />
+<section class="main_breadcrumb">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="breadcrumb-content">
+                <h2>@this.ViewData["Title"]</h2>
+            </div>
+        </div>
+    </div>
+</section>
+<hr />
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Създай нова</a>
+</p>
+<table class="table table-bordered table-hover table-striped">
+    <thead>
+        <tr>
+            <th>
+                Име
+            </th>
+            <th>
+                Изтрита
+            </th>
+            <th>
+                Създадена на
+            </th>
+            <th>
+                Модифицирана на
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsDeleted)
+                    @Html.DisplayFor(modelItem => item.DeletedOn)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreatedOn)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ModifiedOn)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Редактирай</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Детайли</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Изтрий</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<hr />
+<hr />
