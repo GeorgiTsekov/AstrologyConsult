@@ -14,5 +14,9 @@
         int GetCount();
 
         T GetById<T>(int id);
+
+        Task UpdateAsync(int id, EditArticleInputModel input);
+
+        Task DeleteAsync(int id);
     }
 }

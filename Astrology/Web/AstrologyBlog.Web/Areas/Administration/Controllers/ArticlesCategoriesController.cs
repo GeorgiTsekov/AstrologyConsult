@@ -3,7 +3,6 @@
     using System.Linq;
     using System.Threading.Tasks;
 
-    using AstrologyBlog.Data;
     using AstrologyBlog.Data.Common.Repositories;
     using AstrologyBlog.Data.Models;
     using Microsoft.AspNetCore.Mvc;

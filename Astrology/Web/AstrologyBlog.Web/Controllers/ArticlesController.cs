@@ -2,6 +2,7 @@
 {
     using System;
     using System.Threading.Tasks;
+
     using AstrologyBlog.Common;
     using AstrologyBlog.Data.Models;
     using AstrologyBlog.Services.Data;
@@ -44,6 +45,30 @@
         }
 
         [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
+        public IActionResult Edit(int id)
+        {
+            var inputModel = this.articlesService.GetById<EditArticleInputModel>(id);
+            inputModel.ArticlesCategories = this.articlesCategoriesService.GetAll<CategoryDropDowwViewModel>();
+            return this.View(inputModel);
+        }
+
+        [HttpPost]
+        [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
+        public async Task<IActionResult> Edit(int id, EditArticleInputModel input)
+        {
+            if (!this.ModelState.IsValid)
+            {
+                input.ArticlesCategories = this.articlesCategoriesService.GetAll<CategoryDropDowwViewModel>();
+                return this.View(input);
+            }
+
+            await this.articlesService.UpdateAsync(id, input);
+
+            return this.RedirectToAction(nameof(this.ById), new { id });
+        }
+
+
+        [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
         public IActionResult Create()
         {
             var articleCategories = this.articlesCategoriesService.GetAll<CategoryDropDowwViewModel>();
@@ -56,7 +81,7 @@
         }
 
         [HttpPost]
-        [Authorize]
+        [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
         public async Task<IActionResult> Create(CreateArticleInputModel input)
         {
             if (!this.ModelState.IsValid)
@@ -78,7 +103,7 @@
 
             // var articleId = await this.articlesService.CreateAsync(input.Name, input.Description, input.ImageUrl, input.ArticlesCategoryId, user.Id);
             // return this.RedirectToAction("ById", new { id = articleId });
-            return this.Redirect("/");
+            return this.RedirectToAction(nameof(this.All));
         }
 
         public IActionResult ById(int id)
@@ -90,6 +115,14 @@
             }
 
             return this.View(article);
+        }
+
+        [HttpPost]
+        [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
+        public async Task<IActionResult> Delete(int id)
+        {
+            await this.articlesService.DeleteAsync(id);
+            return this.RedirectToAction(nameof(this.All));
         }
     }
 }

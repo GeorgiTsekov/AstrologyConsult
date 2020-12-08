@@ -4,6 +4,8 @@
     this.ViewData["Title"] = "Статии - Всичко за астрологията";
 }
 <hr />
+<partial name="_PagingPartial" model="@Model" />
+
 <section class="main_breadcrumb">
     <div class="container-fluid">
         <div class="row">
@@ -13,7 +15,6 @@
         </div>
     </div>
 </section>
-<hr />
 <div id="content" class="blog_page blog_margin">
     <!-- Our Services -->
     <div id="blogs" class="blog_section">

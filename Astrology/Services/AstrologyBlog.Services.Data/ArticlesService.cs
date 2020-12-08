@@ -57,6 +57,13 @@
             return article.Id;
         }
 
+        public async Task DeleteAsync(int id)
+        {
+            var article = this.articlesRepository.All().FirstOrDefault(x => x.Id == id);
+            this.articlesRepository.Delete(article);
+            await this.articlesRepository.SaveChangesAsync();
+        }
+
         public IEnumerable<T> GetAll<T>(int page, int itemsPerPage = 12)
         {
             var articles = this.articlesRepository.All()
@@ -82,6 +89,15 @@
         public int GetCount()
         {
             return this.articlesRepository.All().Count();
+        }
+
+        public async Task UpdateAsync(int id, EditArticleInputModel input)
+        {
+            var article = this.articlesRepository.All().FirstOrDefault(x => x.Id == id);
+            article.Name = input.Name;
+            article.Description = input.Description;
+            article.ArticlesCategoryId = input.ArticlesCategoryId;
+            await this.articlesRepository.SaveChangesAsync();
         }
     }
 }
