@@ -18,25 +18,6 @@
 </head>
 <body>
     <header class="header-area">
-        <div class="top-header">
-            <div class="container-fluid">
-                <div class="row align-items-center">
-                    <div class="col-lg-8 col-md-12">
-                        <ul class="top-header-contact-info">
-                            <li><i class="fa fa-envelope-o"></i> info@yourcompany.com</li>
-                            <li><i class="fa fa-phone"></i> Emergancy Helpline: <a href="tel:+44587154756">+91 123 456-7890</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-lg-4 col-md-12">
-                        <ul class="top-header-social header_account">
-                            <partial name="_LoginPartial" />
-                        </ul>
-                    </div>
-
-                </div>
-            </div>
-        </div>
         <div class="navbar-area">
             <div class="astrology-nav">
                 <div class="container">
@@ -58,9 +39,9 @@
                                         </li>
                                         @if (this.User.IsInRole(GlobalConstants.AdministratorRoleName))
                                         {
-                                        <li class="nav-item">
-                                            <a class="navbar-brand text-dark" asp-area="" asp-controller="Articles" asp-action="Create">Създай статия</a>
-                                        </li>
+                                            <li class="nav-item">
+                                                <a class="navbar-brand text-dark" asp-area="" asp-controller="Articles" asp-action="Create">Създай статия</a>
+                                            </li>
                                         }
                                         @if (this.User.IsInRole(GlobalConstants.AdministratorRoleName))
                                         {
@@ -78,28 +59,85 @@
                 </div>
             </div>
         </div>
+        <div class="top-header">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-lg-8 col-md-12">
+                        <ul class="top-header-contact-info">
+                            <li><i class="fa fa-user-astronaut"></i>Борислава Цекова</li>
+                            <li><i class="fa fa-meteor"></i>Астрологични консултации</li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-4 col-md-12">
+                        <ul class="top-header-social header_account">
+                            <partial name="_LoginPartial" />
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
         <!-- End Navbar Area -->
     </header>
+
+    <section class="main_breadcrumb">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="breadcrumb-content">
+                    <h2>@this.ViewData["Title"]</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="silder" class="silder_wrapper">
+        <div id="home-silder" class="item">
+            <div class="item">
+                <img class="img-fluid w-100" src="~/images/silder/astrologers-work1.jpg" alt="silder images" title="silder images">
+            </div>
+        </div>
+    </section>
+    <hr />
+
     <div class="container">
         <partial name="_CookieConsentPartial" />
         <main role="main" class="pb-3">
             @this.RenderBody()
         </main>
     </div>
+    <!-- Footer Section -->
     <footer id="footer" class="footer">
         <div class="container-fluid">
             <div class="row">
-                <div class="row footer_matter">
-                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                        <div class="footer_logo_wrapper">
-                            <h3 class="wow fadeInDown animated">phone: +359-884-456-780</h3>
-                            <h3 class="wow fadeInDown animated">Email: astro-Borislava@abv.bg</h3>
+                <!-- Newslatter-->
+                <div class="footer_newslatter wow fadeInDown animated">
+                    <div class="box">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <strong class="wow fadeInDown animated">Регистрирай се безплатно</strong>
+                            </div>
+                            <div class="col-sm-4">
+                                <p class="wow fadeInDown animated">Разгледай статиите</p>
+                            </div>
                         </div>
                     </div>
+                </div>
+                <!-- Newslatter end-->
+                <div class="row footer_matter">
                 </div>
             </div>
         </div>
     </footer>
+
+    <div class="footer_copyright">
+        <div class="container-fluid">
+            <p class="wow fadeInDown animated">телефон: +359-884-456-780</p>
+            <p class="wow fadeInDown animated">имейл: astro-Borislava@abv.bg</p>
+        </div>
+    </div>
+
     <div class="top_button">
         <a class="back-to-top" style="cursor:pointer;" id="top-scrolltop"><i class="fa fa-angle-up"></i></a>
     </div>

@@ -3,18 +3,6 @@
 @{
     this.ViewData["Title"] = $"{GlobalConstants.WelcomeName}!";
 }
-
-<hr />
-<section class="main_breadcrumb">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="breadcrumb-content">
-                <h2>@this.ViewData["Title"]</h2>
-            </div>
-        </div>
-    </div>
-</section>
-<hr />
 <div class="row row-cols-1 row-cols-md-6">
     @foreach (var category in Model.Categories)
     {
@@ -23,12 +11,5 @@
         </div>
     }
 </div>
-<section id="silder" class="silder_wrapper">
-    <div id="home-silder" class="item">
-        <div class="item">
-            <img class="img-fluid w-100" src="~/images/silder/images (1).jpg" alt="silder images" title="silder images">
-        </div>
-    </div>
-</section>
 <hr />
 <hr />
