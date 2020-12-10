@@ -492,3 +492,5 @@ C:\Dev\CSharpAspNetCoreOct2020\Astrology\Web\AstrologyBlog.Web\obj\Debug\netcore
 C:\Dev\CSharpAspNetCoreOct2020\Astrology\Web\AstrologyBlog.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Administration\Views\ArticlesCategories\Index.cshtml.g.cs
 C:\Dev\CSharpAspNetCoreOct2020\Astrology\Web\AstrologyBlog.Web\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
 C:\Dev\CSharpAspNetCoreOct2020\Astrology\Web\AstrologyBlog.Web\obj\Debug\netcoreapp3.1\Razor\Views\Articles\Edit.cshtml.g.cs
+C:\Dev\CSharpAspNetCoreOct2020\Astrology\Web\AstrologyBlog.Web\obj\Debug\netcoreapp3.1\Razor\Views\Abouts\Index.cshtml.g.cs
+C:\Dev\CSharpAspNetCoreOct2020\Astrology\Web\AstrologyBlog.Web\obj\Debug\netcoreapp3.1\Razor\Views\Contacts\Index.cshtml.g.cs
