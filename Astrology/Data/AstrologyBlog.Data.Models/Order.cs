@@ -18,7 +18,7 @@
 
         public string Question { get; set; }
 
-        public int ArticlesCategoryId { get; set; }
+        public int CategoryId { get; set; }
 
         public virtual Category Category { get; set; }
     }

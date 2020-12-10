@@ -26,9 +26,6 @@ namespace AstrologyBlog.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("CategoryId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
 
@@ -36,9 +33,6 @@ namespace AstrologyBlog.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ImageUrl")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsDeleted")
@@ -54,8 +48,6 @@ namespace AstrologyBlog.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CategoryId");
 
                     b.HasIndex("IsDeleted");
 
@@ -273,9 +265,6 @@ namespace AstrologyBlog.Data.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ImageUrl")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
@@ -476,16 +465,13 @@ namespace AstrologyBlog.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("ArticlesCategoryId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("BirthDay")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("BirthTown")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("CategoryId")
+                    b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("CreatedOn")
@@ -740,13 +726,6 @@ namespace AstrologyBlog.Data.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("AstrologyBlog.Data.Models.About", b =>
-                {
-                    b.HasOne("AstrologyBlog.Data.Models.Category", "Category")
-                        .WithMany("Abouts")
-                        .HasForeignKey("CategoryId");
-                });
-
             modelBuilder.Entity("AstrologyBlog.Data.Models.Article", b =>
                 {
                     b.HasOne("AstrologyBlog.Data.Models.ArticlesCategory", "ArticlesCategory")
@@ -805,7 +784,9 @@ namespace AstrologyBlog.Data.Migrations
                 {
                     b.HasOne("AstrologyBlog.Data.Models.Category", "Category")
                         .WithMany("Orders")
-                        .HasForeignKey("CategoryId");
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("AstrologyBlog.Data.Models.Video", b =>

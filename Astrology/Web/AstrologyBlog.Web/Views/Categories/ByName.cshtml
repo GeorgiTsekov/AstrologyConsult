@@ -7,39 +7,19 @@
     <div id="blogs" class="blog_section">
         <div class="container-fluid">
             <div class="blog_inner_matter">
-                <h2 class="wow fadeInDown animated"><a href="">Какво е @this.ViewData["Name"]?</a></h2>
-            </div>
-            <div class="row">
-                <!-- left side -->
-                <div class="col-md-6">
-                    <div class="eb_left">
-                        <div class="col-md-12">
-                            <div class="blog_inner_matter">
-                                <p class="wow fadeInDown animated">@Model.Description</p>
-                            </div>
+                <h2 class="wow fadeInLeftBig animated"><a href="">Какво е @this.ViewData["Name"]?</a></h2>
+                    <!-- left side -->
+                    <div class="col-md-12">
+                        <div class="blog_inner_matter">
+                            <p class="wow fadeInUpBig animated">@Model.Description</p>
                         </div>
                     </div>
-                </div>
-                <!-- right side -->
-                <div class="col-md-6">
-                    <div class="eb_right">
-                        <div class="col-md-12">
-                            <div class="blog_inner_matter">
-                                <div class="image">
-                                    <a href=""><img class="img-fluid w-100" src="@Model.ImageUrl" class="wow fadeInDown animated"></a>
-                                </div>
-                            </div>
-                        </div>
+                    <!-- right side -->
+                    <!-- middle -->
+                    <div class="col-12">
+                        <p class="wow fadeInDownBig animated">@Model.Content</p>
                     </div>
-                </div>
-                <!-- middle -->
-                <div class="col-md-12">
-                    <div class="eb_left">
-                        <div class="col-md-12">
-                            <p class="wow fadeInDown animated">@Model.Content</p>
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </div>
     </div>

@@ -9,7 +9,6 @@
         public Category()
         {
             this.Orders = new HashSet<Order>();
-            this.Abouts = new HashSet<About>();
         }
 
         public string Title { get; set; }
@@ -20,10 +19,6 @@
 
         public string Content { get; set; }
 
-        public string ImageUrl { get; set; }
-
         public virtual ICollection<Order> Orders { get; set; }
-
-        public virtual ICollection<About> Abouts { get; set; }
     }
 }

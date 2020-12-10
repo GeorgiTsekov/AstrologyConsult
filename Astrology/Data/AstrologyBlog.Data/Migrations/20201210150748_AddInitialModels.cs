@@ -3,10 +3,29 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace AstrologyBlog.Data.Migrations
 {
-    public partial class AddArticlesAndAllRelatedModels : Migration
+    public partial class AddInitialModels : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "Abouts",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    CreatedOn = table.Column<DateTime>(nullable: false),
+                    ModifiedOn = table.Column<DateTime>(nullable: true),
+                    IsDeleted = table.Column<bool>(nullable: false),
+                    DeletedOn = table.Column<DateTime>(nullable: true),
+                    Title = table.Column<string>(nullable: true),
+                    Name = table.Column<string>(nullable: true),
+                    Description = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Abouts", x => x.Id);
+                });
+
             migrationBuilder.CreateTable(
                 name: "ArticlesCategories",
                 columns: table => new
@@ -84,7 +103,7 @@ namespace AstrologyBlog.Data.Migrations
                     Title = table.Column<string>(nullable: true),
                     Name = table.Column<string>(nullable: true),
                     Description = table.Column<string>(nullable: true),
-                    ImageUrl = table.Column<string>(nullable: true)
+                    Content = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -219,7 +238,7 @@ namespace AstrologyBlog.Data.Migrations
                     DeletedOn = table.Column<DateTime>(nullable: true),
                     Name = table.Column<string>(nullable: true),
                     Description = table.Column<string>(nullable: true),
-                    CreatedByUserId = table.Column<string>(nullable: true),
+                    CreatedByUserId = table.Column<string>(nullable: false),
                     ArticlesCategoryId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
@@ -325,33 +344,6 @@ namespace AstrologyBlog.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Abouts",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    CreatedOn = table.Column<DateTime>(nullable: false),
-                    ModifiedOn = table.Column<DateTime>(nullable: true),
-                    IsDeleted = table.Column<bool>(nullable: false),
-                    DeletedOn = table.Column<DateTime>(nullable: true),
-                    Title = table.Column<string>(nullable: true),
-                    Name = table.Column<string>(nullable: true),
-                    Description = table.Column<string>(nullable: true),
-                    ImageUrl = table.Column<string>(nullable: true),
-                    CategoryId = table.Column<int>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Abouts", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Abouts_Categories_CategoryId",
-                        column: x => x.CategoryId,
-                        principalTable: "Categories",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Orders",
                 columns: table => new
                 {
@@ -367,8 +359,7 @@ namespace AstrologyBlog.Data.Migrations
                     BirthDay = table.Column<DateTime>(nullable: false),
                     BirthTown = table.Column<string>(nullable: true),
                     Question = table.Column<string>(nullable: true),
-                    ArticlesCategoryId = table.Column<int>(nullable: false),
-                    CategoryId = table.Column<int>(nullable: true)
+                    CategoryId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -394,8 +385,7 @@ namespace AstrologyBlog.Data.Migrations
                     ArticleId = table.Column<int>(nullable: false),
                     ParentId = table.Column<int>(nullable: true),
                     Content = table.Column<string>(nullable: true),
-                    UserId = table.Column<int>(nullable: false),
-                    UserId1 = table.Column<string>(nullable: true)
+                    UserId = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -413,8 +403,8 @@ namespace AstrologyBlog.Data.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_Comments_AspNetUsers_UserId1",
-                        column: x => x.UserId1,
+                        name: "FK_Comments_AspNetUsers_UserId",
+                        column: x => x.UserId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
@@ -463,7 +453,7 @@ namespace AstrologyBlog.Data.Migrations
                     DeletedOn = table.Column<DateTime>(nullable: true),
                     ArticleId = table.Column<int>(nullable: false),
                     UserId = table.Column<string>(nullable: false),
-                    Type = table.Column<int>(nullable: false)
+                    StarsCount = table.Column<byte>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -481,11 +471,6 @@ namespace AstrologyBlog.Data.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Abouts_CategoryId",
-                table: "Abouts",
-                column: "CategoryId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Abouts_IsDeleted",
@@ -582,9 +567,9 @@ namespace AstrologyBlog.Data.Migrations
                 column: "ParentId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Comments_UserId1",
+                name: "IX_Comments_UserId",
                 table: "Comments",
-                column: "UserId1");
+                column: "UserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Contacts_IsDeleted",

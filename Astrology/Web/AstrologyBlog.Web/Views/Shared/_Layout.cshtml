@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@this.ViewData["Title"] - @GlobalConstants.WelcomeName</title>
+    <title>@this.ViewData["Title"] - @GlobalConstants.WelcomeName</title>zz
     <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" asp-append-version="true" />
     <link href="~/css/responsive.css" rel="stylesheet" asp-append-version="true" />
     <link href="~/css/style.css" rel="stylesheet" asp-append-version="true" />
@@ -115,12 +115,19 @@
                 <div class="footer_newslatter wow fadeInDown animated">
                     <div class="box">
                         <div class="row">
-                            <div class="col-sm-3">
-                                <strong class="wow fadeInDown animated">Регистрирай се безплатно</strong>
-                            </div>
-                            <div class="col-sm-4">
-                                <p class="wow fadeInDown animated">Разгледай статиите</p>
-                            </div>
+                            <button type="submit" class="btn btn-primary">
+                                <div class="nav-item">
+                                    <a asp-area="Identity" asp-page="/Account/Login">Влез</a>
+                                </div>
+                            </button>
+                            <button type="submit" class="btn btn-primary">
+                                <div class="nav-item">
+                                    <a asp-area="Identity" asp-page="/Account/Register">регистрирай се</a>
+                                </div>
+                            </button>
+                            <button type="submit" class="btn btn-primary">
+                                <a class="navbar-brand" asp-area="" asp-controller="Articles" asp-action="All">Разгледай нашия блог</a>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -133,10 +140,17 @@
 
     <div class="footer_copyright">
         <div class="container-fluid">
-            <p class="wow fadeInDown animated">телефон: +359-884-456-780</p>
-            <p class="wow fadeInDown animated">имейл: astro-Borislava@abv.bg</p>
+            <p class="wow fadeInUpBig animated">телефон: +359-884-456-780</p>
+            <p class="wow fadeInDownBig animated">имейл: astro-Borislava@abv.bg</p>
         </div>
     </div>
+    <section id="silder" class="silder_wrapper">
+        <div id="home-silder" class="item">
+            <div class="item">
+                <img class="img-fluid w-100" src="~/images/silder/forecast-1.jpg" alt="silder images" title="silder images">
+            </div>
+        </div>
+    </section>
 
     <div class="top_button">
         <a class="back-to-top" style="cursor:pointer;" id="top-scrolltop"><i class="fa fa-angle-up"></i></a>
