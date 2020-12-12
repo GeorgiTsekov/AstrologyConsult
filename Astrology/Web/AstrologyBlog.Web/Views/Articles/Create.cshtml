@@ -16,18 +16,6 @@
 
 <form method="post" class="col-md-6 offset-md-3"
       enctype="multipart/form-data">
-    <hr />
-    <section class="main_breadcrumb">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="breadcrumb-content">
-                    <h2>@this.ViewData["Title"]</h2>
-                    <h2>@this.ViewData["Name"]</h2>
-                </div>
-            </div>
-        </div>
-    </section>
-    <hr />
     <div asp-validation-summary="All">
         <div class="form-group">
             <label asp-for="Name">Име на статията</label>
@@ -52,5 +40,3 @@
         <input type="submit" class="btn wow fadeInDown animated" value="Създай статия" />
     </div>
 </form>
-<hr />
-<hr />

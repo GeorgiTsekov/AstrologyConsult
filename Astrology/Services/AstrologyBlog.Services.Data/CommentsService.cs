@@ -1,13 +1,11 @@
-﻿using AstrologyBlog.Data.Common.Repositories;
-using AstrologyBlog.Data.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AstrologyBlog.Services.Data
+﻿namespace AstrologyBlog.Services.Data
 {
+    using System.Linq;
+    using System.Threading.Tasks;
+
+    using AstrologyBlog.Data.Common.Repositories;
+    using AstrologyBlog.Data.Models;
+
     public class CommentsService : ICommentsService
     {
         private readonly IDeletableEntityRepository<Comment> commentsRepository;

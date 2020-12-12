@@ -300,14 +300,11 @@ namespace AstrologyBlog.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("ArticlesCategoryId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("DateTime")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("Date")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("DeletedOn")
                         .HasColumnType("datetime2");
@@ -327,9 +324,10 @@ namespace AstrologyBlog.Data.Migrations
                     b.Property<string>("Place")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.HasIndex("ArticlesCategoryId");
+                    b.HasKey("Id");
 
                     b.HasIndex("IsDeleted");
 
@@ -674,15 +672,6 @@ namespace AstrologyBlog.Data.Migrations
                     b.HasOne("AstrologyBlog.Data.Models.ApplicationUser", "User")
                         .WithMany("Comments")
                         .HasForeignKey("UserId");
-                });
-
-            modelBuilder.Entity("AstrologyBlog.Data.Models.Event", b =>
-                {
-                    b.HasOne("AstrologyBlog.Data.Models.ArticlesCategory", "ArticlesCategory")
-                        .WithMany("Events")
-                        .HasForeignKey("ArticlesCategoryId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("AstrologyBlog.Data.Models.Image", b =>

@@ -3,6 +3,8 @@
 @{
     this.ViewData["Title"] = $"{GlobalConstants.WelcomeName}!";
 }
+<hr />
+
 <div class="row row-cols-1 row-cols-md-6">
     @foreach (var category in Model.Categories)
     {
@@ -11,5 +13,3 @@
         </div>
     }
 </div>
-<hr />
-<hr />

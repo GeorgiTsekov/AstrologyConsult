@@ -101,8 +101,6 @@
                 return this.View(input);
             }
 
-            // var articleId = await this.articlesService.CreateAsync(input.Name, input.Description, input.ImageUrl, input.ArticlesCategoryId, user.Id);
-            // return this.RedirectToAction("ById", new { id = articleId });
             return this.RedirectToAction(nameof(this.All));
         }
 

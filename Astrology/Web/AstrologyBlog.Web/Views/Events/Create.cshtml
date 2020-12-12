@@ -1,0 +1,35 @@
+﻿@model AstrologyBlog.Web.ViewModels.Events.CreateEventInputModel
+@{
+    this.ViewData["Title"] = "Добави ново събитие";
+}
+<form method="post" class="col-md-6 offset-md-3"
+      enctype="multipart/form-data">
+    <div asp-validation-summary="All">
+        <div class="form-group">
+            <label asp-for="Title">Заглавие на събитието</label>
+            <input asp-for="Title" class="form-control" />
+            <span asp-validation-for="Title" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Name">Име на събитието</label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Date">Дата на събитието</label>
+            <input asp-for="Date" class="form-control" />
+            <span asp-validation-for="Date" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Place">Място на събитието</label>
+            <input asp-for="Place" class="form-control" />
+            <span asp-validation-for="Place" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Description">Съдържание</label>
+            <textarea asp-for="Description" class="form-control" rows="5"></textarea>
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+        <input type="submit" class="btn wow fadeInDown animated" value="Създай събитие" />
+    </div>
+</form>

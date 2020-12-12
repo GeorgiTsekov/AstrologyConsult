@@ -25,9 +25,12 @@
                                 <div class="content">
                                     <p>@comment.Content</p>
                                 </div>
-                                <div style="width:96%" class="button-set">
-                                    <button type="submit" class="btn submit" onclick="showAddCommentForm(@comment.Id)">Отговори</button>
-                                </div>
+                                @if (this.User.Identity.IsAuthenticated)
+                                {
+                                    <div style="width:96%" class="button-set">
+                                        <button type="submit" class="btn submit" onclick="showAddCommentForm(@comment.Id)">Отговори</button>
+                                    </div>
+                                }
                             </div>
                             @{ DisplayComments(comment.Id); }
                         </div>
@@ -87,33 +90,39 @@
                                     </p>
                                 </div>
                                 <hr />
-                                <div class="comment-content wow bounceInUp animated">
-                                    <div class="comments-wrapper">
+                            }
+                            <div class="comment-content wow bounceInUp animated">
+                                <div class="comments-wrapper">
+                                    @if (this.User.Identity.IsAuthenticated)
+                                    {
                                         <div style="width:96%" class="button-set">
                                             <button type="submit" class="btn submit" onclick="showAddCommentForm(0)"><span><span>Коментирай</span></span></button>
                                         </div>
-                                        <hr />
-                                        @if (Model.Comments.Count > 0)
+                                    }
+                                    <hr />
+                                    @if (Model.Comments.Count > 0)
+                                    {
+                                        <h3>Коментари</h3>
+                                    }
+                                    @{ DisplayComments(null); }
+                                </div>
+                                <div class="comments-form-wrapper clearfix comment-respond">
+                                    <form asp-controller="Comments" asp-action="Create" method="post" id="AddCommentForm" style="display: none">
+                                        <input type="hidden" name="ArticleId" value="@Model.Id" />
+                                        <input type="hidden" name="ParentId" value="0" />
+                                        <div class="field aw-blog-comment-area">
+                                            <textarea rows="5" cols="50" class="input-text" id="Content" name="Content"></textarea>
+                                        </div>
+                                        @if (this.User.Identity.IsAuthenticated)
                                         {
-                                            <h3>Коментари</h3>
-                                        }
-                                        @{ DisplayComments(null); }
-                                    </div>
-                                    <div class="comments-form-wrapper clearfix comment-respond">
-                                        <form asp-controller="Comments" asp-action="Create" method="post" id="AddCommentForm" style="display: none">
-                                            <input type="hidden" name="ArticleId" value="@Model.Id" />
-                                            <input type="hidden" name="ParentId" value="0" />
-                                            <div class="field aw-blog-comment-area">
-                                                <textarea rows="5" cols="50" class="input-text" id="Content" name="Content"></textarea>
-                                            </div>
                                             <div style="width:96%" class="button-set">
                                                 <button type="submit" class="btn submit"><span><span>Добави коментар</span></span></button>
                                             </div>
-                                        </form>
-                                    </div>
+                                        }
+                                    </form>
                                 </div>
-                            }
-                            else
+                            </div>
+                            @if (!this.User.Identity.IsAuthenticated)
                             {
                                 <h3>Логни се за да оцениш и да коментираш</h3>
                                 <button type="submit" class="btn btn-primary">

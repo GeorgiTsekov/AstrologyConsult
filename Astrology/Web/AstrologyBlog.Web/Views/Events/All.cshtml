@@ -1,0 +1,34 @@
+﻿@using AstrologyBlog.Common
+@model AstrologyBlog.Web.ViewModels.Events.IndexEventViewModel
+@{
+    this.ViewData["Title"] = "Събития";
+}
+<div id="content" class="blog_page blog_margin">
+    <!-- Our Services -->
+    <div id="blogs" class="blog_section">
+        <div class="container-fluid">
+            <div class="row">
+                @foreach (var eventView in Model.Events)
+                {
+                    <div class="col-sm-6">
+                        <div class="about_text wow slideInRight">
+                            <h1>@eventView.Title</h1>
+                            <h2>На @eventView.Date</h2>
+                            <h3>@eventView.Name</h3>
+                            <h4>В @eventView.Place</h4>
+                            <p>@eventView.Description</p>
+                            <p>Очакваме ви!</p>
+                            <p>Местата са ограничени. Необходимо е предварително записване.</p>
+
+                            <h3>Свържете се с нас</h3>
+                            <h2 class="about_contact"><i class="fa fa-phone-volume"></i> +359-884-456-789</h2>
+                            <h2 class="about_contact"><i class="fa fa-envelope-square"></i> astro-Borislava@abv.bg</h2>
+                        </div>
+                        <hr />
+                    </div>
+                    <div class="clear"></div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

@@ -10,7 +10,6 @@
         {
             this.Articles = new HashSet<Article>();
             this.Videos = new HashSet<Video>();
-            this.Events = new HashSet<Event>();
         }
 
         public string Name { get; set; }
@@ -18,7 +17,5 @@
         public virtual ICollection<Article> Articles { get; set; }
 
         public virtual ICollection<Video> Videos { get; set; }
-
-        public virtual ICollection<Event> Events { get; set; }
     }
 }
