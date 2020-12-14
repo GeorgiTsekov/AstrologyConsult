@@ -1,9 +1,0 @@
-C:\Dev\CSharpAspNetCoreOct2020\Astrology\Services\AstrologyBlog.Services.Mapping\bin\Debug\netstandard2.1\AstrologyBlog.Services.Mapping.deps.json
-C:\Dev\CSharpAspNetCoreOct2020\Astrology\Services\AstrologyBlog.Services.Mapping\bin\Debug\netstandard2.1\AstrologyBlog.Services.Mapping.dll
-C:\Dev\CSharpAspNetCoreOct2020\Astrology\Services\AstrologyBlog.Services.Mapping\bin\Debug\netstandard2.1\AstrologyBlog.Services.Mapping.pdb
-C:\Dev\CSharpAspNetCoreOct2020\Astrology\Services\AstrologyBlog.Services.Mapping\obj\Debug\netstandard2.1\AstrologyBlog.Services.Mapping.csprojAssemblyReference.cache
-C:\Dev\CSharpAspNetCoreOct2020\Astrology\Services\AstrologyBlog.Services.Mapping\obj\Debug\netstandard2.1\AstrologyBlog.Services.Mapping.AssemblyInfoInputs.cache
-C:\Dev\CSharpAspNetCoreOct2020\Astrology\Services\AstrologyBlog.Services.Mapping\obj\Debug\netstandard2.1\AstrologyBlog.Services.Mapping.AssemblyInfo.cs
-C:\Dev\CSharpAspNetCoreOct2020\Astrology\Services\AstrologyBlog.Services.Mapping\obj\Debug\netstandard2.1\AstrologyBlog.Services.Mapping.csproj.CoreCompileInputs.cache
-C:\Dev\CSharpAspNetCoreOct2020\Astrology\Services\AstrologyBlog.Services.Mapping\obj\Debug\netstandard2.1\AstrologyBlog.Services.Mapping.dll
-C:\Dev\CSharpAspNetCoreOct2020\Astrology\Services\AstrologyBlog.Services.Mapping\obj\Debug\netstandard2.1\AstrologyBlog.Services.Mapping.pdb

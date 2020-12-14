@@ -1,9 +1,0 @@
-C:\Dev\CSharpAspNetCoreOct2020\Astrology\Services\AstrologyBlog.Services\bin\Debug\netstandard2.1\AstrologyBlog.Services.deps.json
-C:\Dev\CSharpAspNetCoreOct2020\Astrology\Services\AstrologyBlog.Services\bin\Debug\netstandard2.1\AstrologyBlog.Services.dll
-C:\Dev\CSharpAspNetCoreOct2020\Astrology\Services\AstrologyBlog.Services\bin\Debug\netstandard2.1\AstrologyBlog.Services.pdb
-C:\Dev\CSharpAspNetCoreOct2020\Astrology\Services\AstrologyBlog.Services\obj\Debug\netstandard2.1\AstrologyBlog.Services.csprojAssemblyReference.cache
-C:\Dev\CSharpAspNetCoreOct2020\Astrology\Services\AstrologyBlog.Services\obj\Debug\netstandard2.1\AstrologyBlog.Services.AssemblyInfoInputs.cache
-C:\Dev\CSharpAspNetCoreOct2020\Astrology\Services\AstrologyBlog.Services\obj\Debug\netstandard2.1\AstrologyBlog.Services.AssemblyInfo.cs
-C:\Dev\CSharpAspNetCoreOct2020\Astrology\Services\AstrologyBlog.Services\obj\Debug\netstandard2.1\AstrologyBlog.Services.csproj.CoreCompileInputs.cache
-C:\Dev\CSharpAspNetCoreOct2020\Astrology\Services\AstrologyBlog.Services\obj\Debug\netstandard2.1\AstrologyBlog.Services.dll
-C:\Dev\CSharpAspNetCoreOct2020\Astrology\Services\AstrologyBlog.Services\obj\Debug\netstandard2.1\AstrologyBlog.Services.pdb
