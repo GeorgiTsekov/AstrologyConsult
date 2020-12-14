@@ -1,0 +1,51 @@
+﻿@model AstrologyBlog.Web.ViewModels.Orders.CreateOrderInputModel
+@{
+    this.ViewData["Title"] = "Поръчай хороскоп";
+    var categoryItems = this.Model.Categories.Select(x => new SelectListItem(x.Name, x.Id.ToString()));
+}
+<form method="post" class="col-md-6 offset-md-3"
+      enctype="multipart/form-data">
+    <div asp-validation-summary="All">
+        <div class="form-group">
+            <label asp-for="Name">Име</label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Surname">Фамилия</label>
+            <input asp-for="Surname" class="form-control" />
+            <span asp-validation-for="Surname" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="BirthDay">Дата на раждане</label>
+            <input asp-for="BirthDay" class="form-control" />
+            <span asp-validation-for="BirthDay" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="BirthTown">Роден град</label>
+            <input asp-for="BirthTown" class="form-control" />
+            <span asp-validation-for="BirthTown" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Email">Имейл</label>
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Phone">Телефон</label>
+            <input asp-for="Phone" class="form-control" />
+            <span asp-validation-for="Phone" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="CategoryId">Категория</label>
+            <select asp-for="CategoryId" class="form-control" asp-items="categoryItems"></select>
+            <span asp-validation-for="CategoryId" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Question">Въпрос</label>
+            <textarea asp-for="Question" class="form-control" rows="5"></textarea>
+            <span asp-validation-for="Question" class="text-danger"></span>
+        </div>
+        <input type="submit" class="btn wow fadeInDown animated" value="Поръчай хороскоп" />
+    </div>
+</form>
