@@ -45,5 +45,46 @@
 
             return this.RedirectToAction(nameof(this.All));
         }
+
+        [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
+        public IActionResult Details(int id)
+        {
+            var eventView = this.eventsService.GetById<EventViewModel>(id);
+            if (eventView == null)
+            {
+                return this.NotFound();
+            }
+
+            return this.View(eventView);
+        }
+
+        [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
+        public IActionResult Edit(int id)
+        {
+            var inputModel = this.eventsService.GetById<EditEventInputModel>(id);
+            return this.View(inputModel);
+        }
+
+        [HttpPost]
+        [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
+        public async Task<IActionResult> Edit(int id, EditEventInputModel input)
+        {
+            if (!this.ModelState.IsValid)
+            {
+                return this.View(input);
+            }
+
+            await this.eventsService.UpdateAsync(id, input);
+
+            return this.RedirectToAction(nameof(this.Details), new { id });
+        }
+
+        [HttpPost]
+        [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
+        public async Task<IActionResult> Delete(int id)
+        {
+            await this.eventsService.DeleteAsync(id);
+            return this.RedirectToAction(nameof(this.All));
+        }
     }
 }

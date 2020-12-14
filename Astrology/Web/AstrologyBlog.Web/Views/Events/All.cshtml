@@ -17,18 +17,23 @@
                             <h3>@eventView.Name</h3>
                             <h4>В @eventView.Place</h4>
                             <p>@eventView.Description</p>
-                            <p>Очакваме ви!</p>
-                            <p>Местата са ограничени. Необходимо е предварително записване.</p>
-
-                            <h3>Свържете се с нас</h3>
-                            <h2 class="about_contact"><i class="fa fa-phone-volume"></i> +359-884-456-789</h2>
-                            <h2 class="about_contact"><i class="fa fa-envelope-square"></i> astro-Borislava@abv.bg</h2>
                         </div>
+                        @if (this.User.IsInRole(GlobalConstants.AdministratorRoleName))
+                        {
+                            <a asp-action="Details" asp-route-id="@eventView.Id" class="btn wow fadeInDown animated">Детайли</a>
+                        }
                         <hr />
                     </div>
                     <div class="clear"></div>
                 }
             </div>
         </div>
+
+        <h1>Очакваме ви!</h1>
+        <h1>Местата са ограничени. Необходимо е предварително записване.</h1>
+        <h3>Свържете се с нас за да си резервирате място на телефон: </h3>
+        <h2 class="about_contact"><i class="fa fa-phone-volume"></i> +359-884-456-789 </h2>
+        <h3>Или на имейл: </h3>
+        <h2 class="about_contact"><i class="fa fa-envelope-square"></i> astro-Borislava@abv.bg</h2>
     </div>
 </div>

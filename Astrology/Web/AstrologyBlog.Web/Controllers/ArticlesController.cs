@@ -67,7 +67,6 @@
             return this.RedirectToAction(nameof(this.ById), new { id });
         }
 
-
         [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
         public IActionResult Create()
         {

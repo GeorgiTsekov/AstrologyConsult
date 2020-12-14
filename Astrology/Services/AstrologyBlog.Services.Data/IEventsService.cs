@@ -11,10 +11,10 @@
 
         IEnumerable<T> GetAll<T>(int? count = null);
 
-        //int GetCount();
+        T GetById<T>(int id);
 
-        //Task UpdateAsync(int id, EditEventInputModel input);
+        Task UpdateAsync(int id, EditEventInputModel input);
 
-        //Task DeleteAsync(int id);
+        Task DeleteAsync(int id);
     }
 }

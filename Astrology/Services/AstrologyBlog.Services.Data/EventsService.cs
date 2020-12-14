@@ -33,6 +33,13 @@
             await this.eventRepository.SaveChangesAsync();
         }
 
+        public async Task DeleteAsync(int id)
+        {
+            var eventModel = this.eventRepository.All().FirstOrDefault(x => x.Id == id);
+            this.eventRepository.Delete(eventModel);
+            await this.eventRepository.SaveChangesAsync();
+        }
+
         public IEnumerable<T> GetAll<T>(int? count = null)
         {
             IQueryable<Event> events = this.eventRepository.All().OrderByDescending(x => x.CreatedOn);
@@ -42,6 +49,27 @@
             }
 
             return events.To<T>().ToList();
+        }
+
+        public T GetById<T>(int id)
+        {
+            var eventModel = this.eventRepository.AllAsNoTracking()
+                .Where(x => x.Id == id)
+                .To<T>()
+                .FirstOrDefault();
+
+            return eventModel;
+        }
+
+        public async Task UpdateAsync(int id, EditEventInputModel input)
+        {
+            var eventModel = this.eventRepository.All().FirstOrDefault(x => x.Id == id);
+            eventModel.Title = input.Title;
+            eventModel.Name = input.Name;
+            eventModel.Date = input.Date;
+            eventModel.Place = input.Place;
+            eventModel.Description = input.Description;
+            await this.eventRepository.SaveChangesAsync();
         }
     }
 }
