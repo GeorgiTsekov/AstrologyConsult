@@ -1,0 +1,19 @@
+﻿@using AstrologyBlog.Common
+@model AstrologyBlog.Web.ViewModels.Orders.OrderViewModel
+@{
+    this.ViewData["Title"] = "Детайли на поръчката";
+}
+
+<div class="col-sm-9">
+    <div class="blog_inner_matter">
+        <h3 class="wow fadeInDown animated">Създадена на <span>–</span> <time datetime="@Model.CreatedOn.ToString("O")"></time></h3>
+        <p class="wow fadeInDown animated"><a>Име: @Model.Name @Model.Surname</a></p>
+        <p class="wow fadeInDown animated">Роден на: @Model.BirthDay.ToString()</p>
+        <p class="wow fadeInDown animated">В град: @Model.BirthTown</p>
+        <p class="wow fadeInDown animated">Имейл: @Model.Email</p>
+        <p class="wow fadeInDown animated">Телефон: @Model.Phone</p>
+        <p class="wow fadeInDown animated">Категория: @Model.CategoryName</p>
+        <p class="wow fadeInDown animated">Въпрос: @Model.Question</p>
+        <hr />
+    </div>
+</div>

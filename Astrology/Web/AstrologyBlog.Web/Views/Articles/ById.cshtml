@@ -74,6 +74,7 @@
                                     <span class="comments_date blog_dates"><span><i class="fa fa-calendar-alt"></i><time datetime="@Model.CreatedOn.ToString("O")"></time></span></span>
                                 </div>
                                 <h2 class="wow fadeInDown animated"><a href="">@this.ViewData["Title"]</a></h2>
+                                <h3 class="wow fadeInDown animated">Категория: @Model.ArticlesCategoryName</h3>
                                 <p class="wow fadeInDown animated">@Html.Raw(Model.SanitizedDescription)</p>
                             </div>
                             @if (this.User.Identity.IsAuthenticated)

@@ -1,9 +1,8 @@
 ﻿namespace AstrologyBlog.Web.Controllers
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
     using System.Threading.Tasks;
+
+    using AstrologyBlog.Common;
     using AstrologyBlog.Services.Data;
     using AstrologyBlog.Web.ViewModels.Orders;
     using Microsoft.AspNetCore.Authorization;
@@ -44,6 +43,28 @@
             await this.ordersService.CreateAsync(input);
 
             return this.Redirect("/");
+        }
+
+        [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
+        public IActionResult All()
+        {
+            var viewModel = new IndexOrderViewModel
+            {
+                Orders = this.ordersService.GetAll<OrderViewModel>(),
+            };
+            return this.View(viewModel);
+        }
+
+        [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
+        public IActionResult Details(int id)
+        {
+            var eventView = this.ordersService.GetById<OrderViewModel>(id);
+            if (eventView == null)
+            {
+                return this.NotFound();
+            }
+
+            return this.View(eventView);
         }
     }
 }
