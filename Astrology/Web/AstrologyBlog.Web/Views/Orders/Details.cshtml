@@ -15,5 +15,13 @@
         <p class="wow fadeInDown animated">Категория: @Model.CategoryName</p>
         <p class="wow fadeInDown animated">Въпрос: @Model.Question</p>
         <hr />
+        @*<div class="single-meta">
+            <form method="post" asp-action="SendToEmail" asp-route-id="@Model.Id">
+                <button class="btn btn-warning">Потвърди поръчката</button>
+            </form>
+        </div>*@
+        @*<div>
+            <a asp-action="Create" class="btn btn-primary">Обратно към поръчка на хороскоп</a>
+        </div>*@
     </div>
 </div>
