@@ -1,0 +1,42 @@
+﻿@using AstrologyBlog.Common
+@model AstrologyBlog.Web.ViewModels.Videos.IndexVideoViewModel
+@{
+    this.ViewData["Title"] = "Видео - Всичко за астрологията";
+}
+
+<div id="content" class="blog_page blog_margin">
+    <!-- Our Services -->
+    <div id="blogs" class="blog_section">
+        <div class="container-fluid">
+            <div class="row">
+                @foreach (var video in Model.Videos)
+                {
+                    <div class="col-sm-6">
+                        <div class="blog_inner_matter">
+                            <div class="fa-file-video">
+                                <iframe src="http://www.youtube.com/embed/xzvScRnF6MU?autoplay=1" width="960" height="447" frameborder="0" allowfullscreen></iframe>
+                            </div>
+                            <div class="admin_and_comments wow fadeInDown animated">
+                                <span class="blog_admin">
+                                    <span><i class="fa fa-user"></i> Създаденo от</span>
+                                    <span>
+                                        <a>@video.CreatedByUserUserName</a>
+                                    </span>
+                                </span>
+                            </div>
+                            <h2 class="wow fadeInDown animated"><a>@video.Title</a></h2>
+                            <h3 class="wow fadeInDown animated"><a>@video.Name</a></h3>
+                            <p class="wow fadeInDown animated">@Html.Raw(video.ShortDescription)</p>
+                            <a asp-action="ById" asp-route-id="@video.Id" class="btn wow fadeInDown animated">Разгъни на една страница</a>
+                            <hr />
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+<hr />
+<partial name="_PagingPartial" model="@Model" />
+<hr />

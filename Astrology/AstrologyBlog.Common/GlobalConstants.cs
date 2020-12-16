@@ -9,5 +9,7 @@
         public const string WelcomeName = "Добре дошли в света на астрологията";
 
         public const string SystemEmail = "kser@mail.bg";
+
+        public const int ItemsPerPage = 12;
     }
 }

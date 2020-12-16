@@ -1,11 +1,17 @@
-﻿namespace AstrologyBlog.Web.ViewModels.Articles
+﻿namespace AstrologyBlog.Web.ViewModels.Videos
 {
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    public abstract class BaseArticleInputModel
+    using AstrologyBlog.Web.ViewModels.Articles;
+
+    public abstract class BaseVideoInputModel
     {
+        [Required]
+        [MinLength(4)]
+        public string Title { get; set; }
+
         [Required]
         [MinLength(4)]
         public string Name { get; set; }
@@ -13,6 +19,9 @@
         [Required]
         [MinLength(300)]
         public string Description { get; set; }
+
+        [Required]
+        public string VideoUrl { get; set; }
 
         [Range(1, int.MaxValue)]
         [Display(Name = "ArticlesCategory")]

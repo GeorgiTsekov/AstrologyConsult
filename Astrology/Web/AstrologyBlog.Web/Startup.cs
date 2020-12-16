@@ -75,6 +75,7 @@
             services.AddTransient<ICommentsService, CommentsService>();
             services.AddTransient<IEventsService, EventsService>();
             services.AddTransient<IOrdersService, OrdersService>();
+            services.AddTransient<IVideosService, VideosService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

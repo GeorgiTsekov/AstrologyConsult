@@ -33,13 +33,12 @@
 
         public IActionResult All(int id = 1)
         {
-            const int ItemsPerPage = 12;
             var viewModel = new IndexArticleViewModel
             {
-                ItemsPerPage = ItemsPerPage,
+                ItemsPerPage = GlobalConstants.ItemsPerPage,
                 PageNumber = id,
-                Articles = this.articlesService.GetAll<ArticleViewModel>(id, ItemsPerPage),
-                ArticlesCount = this.articlesService.GetCount(),
+                Articles = this.articlesService.GetAll<ArticleViewModel>(id, GlobalConstants.ItemsPerPage),
+                ItemsCount = this.articlesService.GetCount(),
             };
             return this.View(viewModel);
         }
@@ -48,7 +47,7 @@
         public IActionResult Edit(int id)
         {
             var inputModel = this.articlesService.GetById<EditArticleInputModel>(id);
-            inputModel.ArticlesCategories = this.articlesCategoriesService.GetAll<CategoryDropDowwViewModel>();
+            inputModel.ArticlesCategories = this.articlesCategoriesService.GetAll<ArticlesCategoryDropDowwViewModel>();
             return this.View(inputModel);
         }
 
@@ -58,7 +57,7 @@
         {
             if (!this.ModelState.IsValid)
             {
-                input.ArticlesCategories = this.articlesCategoriesService.GetAll<CategoryDropDowwViewModel>();
+                input.ArticlesCategories = this.articlesCategoriesService.GetAll<ArticlesCategoryDropDowwViewModel>();
                 return this.View(input);
             }
 
@@ -70,7 +69,7 @@
         [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
         public IActionResult Create()
         {
-            var articleCategories = this.articlesCategoriesService.GetAll<CategoryDropDowwViewModel>();
+            var articleCategories = this.articlesCategoriesService.GetAll<ArticlesCategoryDropDowwViewModel>();
             var viewModel = new CreateArticleInputModel
             {
                 ArticlesCategories = articleCategories,
