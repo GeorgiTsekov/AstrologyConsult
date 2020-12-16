@@ -13,21 +13,15 @@
                 {
                     <div class="col-sm-6">
                         <div class="blog_inner_matter">
-                            <div class="fa-file-video">
-                                <iframe src="http://www.youtube.com/embed/xzvScRnF6MU?autoplay=1" width="960" height="447" frameborder="0" allowfullscreen></iframe>
+                            <div class="youtube">
+                                <iframe width="420" height="250"  src="@video.VideoUrl" frameborder="0" class="wow fadeInDown animated"></iframe>
                             </div>
                             <div class="admin_and_comments wow fadeInDown animated">
-                                <span class="blog_admin">
-                                    <span><i class="fa fa-user"></i> Създаденo от</span>
-                                    <span>
-                                        <a>@video.CreatedByUserUserName</a>
-                                    </span>
-                                </span>
                             </div>
                             <h2 class="wow fadeInDown animated"><a>@video.Title</a></h2>
                             <h3 class="wow fadeInDown animated"><a>@video.Name</a></h3>
-                            <p class="wow fadeInDown animated">@Html.Raw(video.ShortDescription)</p>
-                            <a asp-action="ById" asp-route-id="@video.Id" class="btn wow fadeInDown animated">Разгъни на една страница</a>
+                            <p class="wow fadeInDown animated">@video.Description</p>
+                            <a asp-action="ById" asp-route-id="@video.Id" class="btn wow fadeInDown animated">Разгъни на цяла страница</a>
                             <hr />
                         </div>
                     </div>

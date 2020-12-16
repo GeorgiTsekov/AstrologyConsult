@@ -17,11 +17,8 @@
         public string Name { get; set; }
 
         [Required]
-        [MinLength(300)]
+        [MinLength(20)]
         public string Description { get; set; }
-
-        [Required]
-        public string VideoUrl { get; set; }
 
         [Range(1, int.MaxValue)]
         [Display(Name = "ArticlesCategory")]

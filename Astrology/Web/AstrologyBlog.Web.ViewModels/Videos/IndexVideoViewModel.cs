@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace AstrologyBlog.Web.ViewModels.Videos
+﻿namespace AstrologyBlog.Web.ViewModels.Videos
 {
+    using System.Collections.Generic;
+
     public class IndexVideoViewModel : PagingViewModel
     {
         public IEnumerable<VideoViewModel> Videos { get; set; }

@@ -4,16 +4,6 @@
     var articleCategoryItems = this.Model.ArticlesCategories.Select(x => new SelectListItem(x.Name, x.Id.ToString()));
 }
 
-<script src="~/lib/tinymce/tinymce.min.js" type="text/javascript"></script>
-<script type="text/javascript">
-    tinymce.init({
-        selector: "textarea",
-        plugins: [
-            "image paste table link code media"
-        ]
-    });
-</script>
-
 <form method="post" class="col-md-6 offset-md-3"
       enctype="multipart/form-data">
     <div asp-validation-summary="All">

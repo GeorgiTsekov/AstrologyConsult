@@ -3,6 +3,7 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using System.Text;
     using System.Threading.Tasks;
 
     using AstrologyBlog.Data.Common.Repositories;
@@ -21,12 +22,17 @@
 
         public async Task<int> CreateAsync(CreateVideoInputModel input)
         {
+            var youtubeVideo = new StringBuilder();
+            youtubeVideo.Append("https://www.youtube.com/embed/");
+            var splitedVideoUrl = input.VideoUrl.Split("watch?v=");
+            youtubeVideo.Append(splitedVideoUrl[1]);
+            youtubeVideo.Append("?autoplay=0");
             var video = new Video
             {
                 Title = input.Title,
                 Name = input.Name,
                 Description = input.Description,
-                VideoUrl = input.VideoUrl,
+                VideoUrl = youtubeVideo.ToString().TrimEnd(),
                 ArticlesCategoryId = input.ArticlesCategoryId,
             };
 

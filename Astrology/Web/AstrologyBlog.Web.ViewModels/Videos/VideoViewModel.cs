@@ -18,25 +18,10 @@
 
         public string Description { get; set; }
 
-        public string SanitizedDescription => new HtmlSanitizer().Sanitize(this.Description);
-
         public string VideoUrl { get; set; }
-
-        public string CreatedByUserUserName { get; set; }
 
         public DateTime CreatedOn { get; set; }
 
         public int ArticlesCategoryId { get; set; }
-
-        public string ShortDescription
-        {
-            get
-            {
-                var description = WebUtility.HtmlDecode(Regex.Replace(this.SanitizedDescription, @"<[^>]+>", string.Empty));
-                return description.Length > 200
-                        ? description.Substring(0, 200) + "..."
-                        : description;
-            }
-        }
     }
 }
