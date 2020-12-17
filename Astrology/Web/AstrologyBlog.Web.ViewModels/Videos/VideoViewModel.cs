@@ -23,5 +23,16 @@
         public DateTime CreatedOn { get; set; }
 
         public int ArticlesCategoryId { get; set; }
+
+        public string ShortDescription
+        {
+            get
+            {
+                var description = WebUtility.HtmlDecode(Regex.Replace(this.Description, @"<[^>]+>", string.Empty));
+                return description.Length > 50
+                        ? description.Substring(0, 50) + "..."
+                        : description;
+            }
+        }
     }
 }

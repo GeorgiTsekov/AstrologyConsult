@@ -1,6 +1,5 @@
 ﻿namespace AstrologyBlog.Services.Data
 {
-    using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
@@ -22,11 +21,9 @@
 
         public async Task<int> CreateAsync(CreateVideoInputModel input)
         {
-            var youtubeVideo = new StringBuilder();
-            youtubeVideo.Append("https://www.youtube.com/embed/");
-            var splitedVideoUrl = input.VideoUrl.Split("watch?v=");
-            youtubeVideo.Append(splitedVideoUrl[1]);
-            youtubeVideo.Append("?autoplay=0");
+            var videoInput = input.VideoUrl;
+            string youtubeVideo = MakeYoutubeVideoWorkForMyApp(videoInput);
+
             var video = new Video
             {
                 Title = input.Title,
@@ -41,7 +38,14 @@
             return video.Id;
         }
 
-        public IEnumerable<T> GetAll<T>(int page, int itemsPerPage = 12)
+        public async Task DeleteAsync(int id)
+        {
+            var video = this.videoRepository.All().FirstOrDefault(x => x.Id == id);
+            this.videoRepository.Delete(video);
+            await this.videoRepository.SaveChangesAsync();
+        }
+
+        public IEnumerable<T> GetAll<T>(int page, int itemsPerPage)
         {
             var videos = this.videoRepository.All()
                 .OrderByDescending(x => x.CreatedOn)
@@ -52,9 +56,44 @@
             return videos;
         }
 
+        public T GetById<T>(int id)
+        {
+            var video = this.videoRepository.AllAsNoTracking()
+                .Where(x => x.Id == id)
+                .To<T>()
+                .FirstOrDefault();
+
+            return video;
+        }
+
         public int GetCount()
         {
             return this.videoRepository.All().Count();
+        }
+
+        public async Task UpdateAsync(int id, EditVideoInputModel input)
+        {
+            var videoInput = input.VideoUrl;
+            string youtubeVideo = MakeYoutubeVideoWorkForMyApp(videoInput);
+
+            var video = this.videoRepository.All().FirstOrDefault(x => x.Id == id);
+            video.Title = input.Title;
+            video.Name = input.Name;
+            video.Description = input.Description;
+            video.VideoUrl = youtubeVideo;
+            video.ArticlesCategoryId = input.ArticlesCategoryId;
+            await this.videoRepository.SaveChangesAsync();
+        }
+
+        private static string MakeYoutubeVideoWorkForMyApp(string videoInput)
+        {
+            var sb = new StringBuilder();
+            sb.Append("https://www.youtube.com/embed/");
+            var splitedVideoUrl = videoInput.Split("watch?v=");
+            sb.Append(splitedVideoUrl[1]);
+            sb.Append("?autoplay=0");
+            var youtubeVideo = sb.ToString().TrimEnd();
+            return youtubeVideo;
         }
     }
 }

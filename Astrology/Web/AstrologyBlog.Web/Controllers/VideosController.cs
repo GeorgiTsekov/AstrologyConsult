@@ -62,5 +62,47 @@
             };
             return this.View(viewModel);
         }
+
+        public IActionResult ById(int id)
+        {
+            var video = this.videosService.GetById<SingleVideoViewModel>(id);
+            if (video == null)
+            {
+                return this.NotFound();
+            }
+
+            return this.View(video);
+        }
+
+        [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
+        public IActionResult Edit(int id)
+        {
+            var inputModel = this.videosService.GetById<EditVideoInputModel>(id);
+            inputModel.ArticlesCategories = this.articlesCategoriesService.GetAll<ArticlesCategoryDropDowwViewModel>();
+            return this.View(inputModel);
+        }
+
+        [HttpPost]
+        [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
+        public async Task<IActionResult> Edit(int id, EditVideoInputModel input)
+        {
+            if (!this.ModelState.IsValid)
+            {
+                input.ArticlesCategories = this.articlesCategoriesService.GetAll<ArticlesCategoryDropDowwViewModel>();
+                return this.View(input);
+            }
+
+            await this.videosService.UpdateAsync(id, input);
+
+            return this.RedirectToAction(nameof(this.ById), new { id });
+        }
+
+        [HttpPost]
+        [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
+        public async Task<IActionResult> Delete(int id)
+        {
+            await this.videosService.DeleteAsync(id);
+            return this.RedirectToAction(nameof(this.All));
+        }
     }
 }

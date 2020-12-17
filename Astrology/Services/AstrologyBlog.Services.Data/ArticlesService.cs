@@ -64,7 +64,7 @@
             await this.articlesRepository.SaveChangesAsync();
         }
 
-        public IEnumerable<T> GetAll<T>(int page, int itemsPerPage = 12)
+        public IEnumerable<T> GetAll<T>(int page, int itemsPerPage)
         {
             var articles = this.articlesRepository.All()
                 .OrderByDescending(x => x.CreatedOn)

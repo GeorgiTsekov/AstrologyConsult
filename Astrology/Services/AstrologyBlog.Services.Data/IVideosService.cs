@@ -11,14 +11,14 @@
     {
         Task<int> CreateAsync(CreateVideoInputModel input);
 
-        IEnumerable<T> GetAll<T>(int page, int itemsPerPage = 12);
+        IEnumerable<T> GetAll<T>(int page, int itemsPerPage);
 
         int GetCount();
 
-        //T GetById<T>(int id);
+        T GetById<T>(int id);
 
-        //Task UpdateAsync(int id, EditVideoInputModel input);
+        Task UpdateAsync(int id, EditVideoInputModel input);
 
-        //Task DeleteAsync(int id);
+        Task DeleteAsync(int id);
     }
 }

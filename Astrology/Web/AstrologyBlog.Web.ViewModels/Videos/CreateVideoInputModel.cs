@@ -1,10 +1,8 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace AstrologyBlog.Web.ViewModels.Videos
+﻿namespace AstrologyBlog.Web.ViewModels.Videos
 {
+    using System.ComponentModel.DataAnnotations;
+
     public class CreateVideoInputModel : BaseVideoInputModel
     {
-        [Required]
-        public string VideoUrl { get; set; }
     }
 }
