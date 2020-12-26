@@ -4,7 +4,6 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@this.ViewData["Title"] - @GlobalConstants.WelcomeName</title>
     <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" asp-append-version="true" />
     <link href="~/css/responsive.css" rel="stylesheet" asp-append-version="true" />
     <link href="~/css/style.css" rel="stylesheet" asp-append-version="true" />
@@ -174,18 +173,50 @@
     </footer>
 
     <div class="footer_copyright">
-        <div class="container-fluid">
-            <p class="wow fadeInUpBig animated">телефон: +359-884-456-780</p>
-            <p class="wow fadeInDownBig animated">имейл: astro-Borislava@abv.bg</p>
-        </div>
-    </div>
-    <section id="silder" class="silder_wrapper">
-        <div id="home-silder" class="item">
-            <div class="item">
-                <img class="img-fluid w-100" src="~/images/silder/forecast-1.jpg" alt="silder images" title="silder images">
+        <div id="website_visitors" class="astrologers-work">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="astrologers_title">
+                            <h2 class="wow fadeInDown animated">Нашите астролози работят за вас</h2>
+                            <p class="wow fadeInDown animated">Нашите астролози предлагат годишни, месечни и дневни хороскопи за всички посетители на страницата</p>
+                            <p class="wow fadeInDown animated">Всеки ден качваме нови статии свързани с астрологията, както и нови видеа. Правим събития почти всеки месец, като каним различни астролози.</p>
+                            <p class="wow fadeInDown animated">Нашите хороскопи могат да помогнат да решите много всекидневни проблеми и да живеете щастливо живота си.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="astrologers_visitors">
+                            <div class="col-sm-6">
+                                <div class="astrologers_experience">
+                                    <h3 class="wow fadeInDown animated number-counter" data-count-from="0" data-count-to="10" data-count-speed="30"></h3>
+                                    <h5 class="wow fadeInDown animated">Години опит</h5>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="astrologers_experience">
+                                    <h3 class="wow fadeInDown animated number-counter" data-count-from="0" data-count-to="6" data-count-speed="30"></h3>
+                                    <h5 class="wow fadeInDown animated">Видове хороскопи</h5>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="astrologers_experience">
+                                    <h3 class="wow fadeInDown animated number-counter" data-count-from="0" data-count-to="3" data-count-speed="30"></h3>
+                                    <h5 class="wow fadeInDown animated">Квалифицирани астролози</h5>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="astrologers_experience">
+                                    <h3 class="wow fadeInDown animated number-counter" data-count-from="0" data-count-to="1000" data-count-speed="30"></h3>
+                                    <h5 class="wow fadeInDown animated">Посетители на час</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
 
     <div class="top_button">
         <a class="back-to-top" style="cursor:pointer;" id="top-scrolltop"><i class="fa fa-angle-up"></i></a>
