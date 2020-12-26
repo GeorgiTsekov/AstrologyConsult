@@ -8,39 +8,35 @@
     <div id="blogs" class="blog_section">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-sm-9">
-                    <div class="eb_left">
+                <div class="col-sm-12">
+                    <div class="blog_inner_matter">
+
+                        @if (this.User.IsInRole(GlobalConstants.AdministratorRoleName))
+                        {
+                            <div class="single-meta">
+                                <a asp-controller="Videos" asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Редактирай</a>
+                            </div>
+                            <hr />
+                            <div class="single-meta">
+                                <form method="post" asp-action="Delete" id="deleteForm" asp-route-id="@Model.Id"></form>
+                                <button class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Изтрий</button>
+                            </div>
+                        }
+                        <hr />
                         <div class="col-sm-12">
                             <div class="blog_inner_matter">
-
-                                @if (this.User.IsInRole(GlobalConstants.AdministratorRoleName))
-                                {
-                                    <div class="single-meta">
-                                        <a asp-controller="Videos" asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Редактирай</a>
-                                    </div>
-                                    <hr />
-                                    <div class="single-meta">
-                                        <form method="post" asp-action="Delete" id="deleteForm" asp-route-id="@Model.Id"></form>
-                                        <button class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Изтрий</button>
-                                    </div>
-                                }
-                                <hr />
-                                <div class="col-sm-12">
-                                    <div class="blog_inner_matter">
-                                        <div class="youtube">
-                                            <iframe width="960" height="600" src="@Model.VideoUrl" frameborder="0" class="wow fadeInDown animated"></iframe>
-                                        </div>
-                                        <div class="admin_and_comments wow fadeInDown animated">
-                                        </div>
-                                        <h2 class="wow fadeInDown animated"><a>@Model.Title</a></h2>
-                                        <h3 class="wow fadeInDown animated"><a>@Model.Name</a></h3>
-                                        <p class="wow fadeInDown animated">@Model.Description</p>
-                                        <hr />
-                                    </div>
+                                <div class="youtube">
+                                    <iframe width=100%; height=auto; src="@Model.VideoUrl" frameborder="0" class="wow fadeInDown animated"></iframe>
                                 </div>
-                                <div class="clear"></div>
+                                <div class="admin_and_comments wow fadeInDown animated">
+                                </div>
+                                <h2 class="wow fadeInDown animated"><a>@Model.Title</a></h2>
+                                <h3 class="wow fadeInDown animated"><a>@Model.Name</a></h3>
+                                <p class="wow fadeInDown animated">@Model.Description</p>
+                                <hr />
                             </div>
                         </div>
+                        <div class="clear"></div>
                     </div>
                 </div>
             </div>
