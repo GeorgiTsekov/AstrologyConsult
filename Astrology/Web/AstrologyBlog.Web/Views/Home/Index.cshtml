@@ -4,13 +4,23 @@
     this.ViewData["Title"] = $"{GlobalConstants.WelcomeName}!";
     this.ViewData["Name"] = $"{GlobalConstants.Categories}!";
 }
+
+<section id="silder" class="silder_wrapper">
+    <div id="home-silder" class="item">
+        <div class="item">
+            <img class="img-fluid w-100" src="~/images/silder/astrologers-work1.jpg" alt="silder images" title="silder images">
+        </div>
+    </div>
+</section>
+
 <hr />
-<h1>@this.ViewData["Name"]</h1>
+<h1 style="text-align:center;">@this.ViewData["Name"]</h1>
+<hr />
 <div class="row">
     @foreach (var category in Model.Categories)
     {
         <div class="col mb-4">
-            <a href="@category.Url" class="btn btn-primary btn-dark">@category.Name</a>
+            <a href="@category.Url" class="btn-group">@category.Name</a>
         </div>
     }
 </div>
