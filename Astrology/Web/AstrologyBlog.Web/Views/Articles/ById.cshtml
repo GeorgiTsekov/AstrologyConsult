@@ -126,16 +126,15 @@
                             @if (!this.User.Identity.IsAuthenticated)
                             {
                                 <h3>Логни се за да оцениш и да коментираш</h3>
-                                <button type="submit" class="btn btn-primary">
-                                    <div class="nav-item">
-                                        <a asp-area="Identity" asp-page="/Account/Login">Влез</a>
-                                    </div>
-                                </button>
-                                <button type="submit" class="btn btn-primary">
-                                    <div class="nav-item">
-                                        <a asp-area="Identity" asp-page="/Account/Register">регистрирай се</a>
-                                    </div>
-                                </button>
+                                
+                                <div class="btn btn-primary">
+                                    <a asp-area="Identity" asp-page="/Account/Login">Влез</a>
+                                </div>
+
+
+                                <div class="btn btn-primary">
+                                    <a asp-area="Identity" asp-page="/Account/Register">регистрирай се</a>
+                                </div>
                             }
                         </div>
                     </div>

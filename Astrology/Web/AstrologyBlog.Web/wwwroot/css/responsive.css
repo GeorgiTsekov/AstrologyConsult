@@ -185,7 +185,6 @@
 #about_us.about_section .row, #website_visitors.astrologers-work .row 
 {
     display: -webkit-box;
-    display: -ms-inline-block;
     display: inline-block;
 }
 #about_us.about_section .about_text
@@ -436,8 +435,6 @@ html body .owl-carousel .owl-buttons .owl-prev, html body .owl-carousel .owl-but
     float: left;
 }
 #footer .footer_newslatter .row {
-    display: -webkit-inline-block;
-    display: -ms-inline-block;
     display: inline-block;
 }
 .footer_newslatter .box

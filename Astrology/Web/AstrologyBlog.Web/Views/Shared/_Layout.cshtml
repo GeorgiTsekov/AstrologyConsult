@@ -9,9 +9,9 @@
     <link href="~/css/style.css" rel="stylesheet" asp-append-version="true" />
     <link href="~/vendor/owl.carousel/assets/owl.carousel.css" rel="stylesheet" asp-append-version="true" />
     <link href="~/vendor/wow/animate.css" rel="stylesheet" asp-append-version="true" />
-    <link href="~/lib/fontawesome/css/all.css" rel="stylesheet" asp-append-version="true" />
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,900&display=swap" rel="stylesheet" asp-append-version="true" />
     <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet" asp-append-version="true" />
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" asp-append-version="true" />
     <link href="~/lib/fontawesome/css/all.css" rel="stylesheet" asp-append-version="true" />
     <link href="~/css/site.min.css" rel="stylesheet" asp-append-version="true" />
 </head>
@@ -151,38 +151,38 @@
         </div>
         @if (this.User.IsInRole(GlobalConstants.AdministratorRoleName))
         {
-        <div class="navbar-area">
-            <div class="astrology-nav">
-                <div class="container">
-                    <div class="row">
-                        <div class="header_menu_wrapper">
-                            <nav class="navbar navbar-expand-md navbar-light">
-                                <div class="collapse navbar-collapse mean-menu" style="display: block;">
-                                    <ul class="navbar-nav">
-                                        <li class="nav-item">
-                                            <a class="navbar-brand text-break" asp-area="" asp-controller="Articles" asp-action="Create">Създай статия</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="navbar-brand text-break" asp-area="" asp-controller="Events" asp-action="Create">Създай събитие</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="navbar-brand text-break" asp-area="" asp-controller="Videos" asp-action="Create">Качи видео</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="navbar-brand text-break" asp-area="Administration" asp-controller="ArticlesCategories" asp-action="Index">Редактирай категория за статия</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="navbar-brand text-break" asp-area="" asp-controller="Orders" asp-action="All">Разгледай поръчките</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </nav>
-                            <div class="clear"></div>
+            <div class="navbar-area">
+                <div class="astrology-nav">
+                    <div class="container">
+                        <div class="row">
+                            <div class="header_menu_wrapper">
+                                <nav class="navbar navbar-expand-md navbar-light">
+                                    <div class="collapse navbar-collapse mean-menu" style="display: block;">
+                                        <ul class="navbar-nav">
+                                            <li class="nav-item">
+                                                <a class="navbar-brand text-break" asp-area="" asp-controller="Articles" asp-action="Create">Създай статия</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="navbar-brand text-break" asp-area="" asp-controller="Events" asp-action="Create">Създай събитие</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="navbar-brand text-break" asp-area="" asp-controller="Videos" asp-action="Create">Качи видео</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="navbar-brand text-break" asp-area="Administration" asp-controller="ArticlesCategories" asp-action="Index">Редактирай категория за статия</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="navbar-brand text-break" asp-area="" asp-controller="Orders" asp-action="All">Разгледай поръчките</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </nav>
+                                <div class="clear"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
         }
 
         <!-- End Navbar Area -->
@@ -210,20 +210,17 @@
                         <div class="row">
                             @if (!this.User.Identity.IsAuthenticated)
                             {
-                            <button type="submit" class="btn btn-primary">
-                                <div class="nav-item">
+                                <div class="btn btn-primary">
                                     <a asp-area="Identity" asp-page="/Account/Login">Влез</a>
                                 </div>
-                            </button>
-                            <button type="submit" class="btn btn-primary">
-                                <div class="nav-item">
+
+                                <div class="btn btn-primary">
                                     <a asp-area="Identity" asp-page="/Account/Register">Регистрирай се</a>
                                 </div>
-                            </button>
                             }
-                            <button type="submit" class="btn btn-primary">
+                            <div class="btn btn-primary">
                                 <a class="navbar-brand" asp-area="" asp-controller="Articles" asp-action="All">Разгледай нашия блог</a>
-                            </button>
+                            </div>
                         </div>
                     </div>
                 </div>
