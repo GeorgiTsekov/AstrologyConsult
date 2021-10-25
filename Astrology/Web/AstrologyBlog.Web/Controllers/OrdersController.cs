@@ -71,18 +71,16 @@
             return this.RedirectToAction("ThankYou");
         }
 
-        //[HttpPost]
-        //public async Task<IActionResult> Create(CreateOrderInputModel input)
-        //{
-        //    if (!this.ModelState.IsValid)
-        //    {
-        //        return this.View(input);
-        //    }
-
-        //    var id = await this.ordersService.CreateAsync(input);
-        //    return this.RedirectToAction(nameof(this.Details), new { id });
-        //}
-
+        // [HttpPost]
+        //  public async Task<IActionResult> Create(CreateOrderInputModel input)
+        //  {
+        //      if (!this.ModelState.IsValid)
+        //      {
+        //          return this.View(input);
+        //      }
+        //      var id = await this.ordersService.CreateAsync(input);
+        //      return this.RedirectToAction(nameof(this.Details), new { id });
+        //  }
         [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
         public IActionResult All()
         {
@@ -110,9 +108,9 @@
             return this.View();
         }
 
-        //[HttpPost]
-        //public async Task<IActionResult> SendToEmail(int id)
-        //{
+        // [HttpPost]
+        // public async Task<IActionResult> SendToEmail(int id)
+        // {
         //    var order = this.ordersService.GetById<OrderViewModel>(id);
         //    var html = new StringBuilder();
         //    html.AppendLine($"<h1>Здравейте {order.Name} {order.Surname}!</h1>");
@@ -120,6 +118,6 @@
         //    html.AppendLine($"<h1>Ще се свържем с вас на {order.Phone} и на имейл {order.Email} за повече информация</h1>");
         //    await this.emailSender.SendEmailAsync("JelanieZaNovJivot.com", "AstrologyBlog", "becosa4476@febeks.com", order.Name, html.ToString());
         //    return this.Redirect("/");
-        //}
+        // }
     }
 }

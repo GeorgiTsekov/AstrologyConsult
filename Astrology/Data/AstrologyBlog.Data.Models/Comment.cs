@@ -1,6 +1,5 @@
 ﻿namespace AstrologyBlog.Data.Models
 {
-
     using AstrologyBlog.Data.Common.Models;
 
     public class Comment : BaseDeletableModel<int>

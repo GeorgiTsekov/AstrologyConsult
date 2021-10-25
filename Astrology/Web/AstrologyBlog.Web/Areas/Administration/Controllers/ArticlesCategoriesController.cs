@@ -65,7 +65,7 @@
         }
 
         // GET: Administration/ArticlesCategories/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public IActionResult Edit(int? id)
         {
             if (id == null)
             {
@@ -86,7 +86,9 @@
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Name,IsDeleted,DeletedOn,Id,CreatedOn,ModifiedOn")] ArticlesCategory articlesCategory)
+        public async Task<IActionResult> Edit(
+            int id,
+            [Bind("Name,IsDeleted,DeletedOn,Id,CreatedOn,ModifiedOn")] ArticlesCategory articlesCategory)
         {
             if (id != articlesCategory.Id)
             {

@@ -1,8 +1,9 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
-
-namespace AstrologyBlog.Data.Migrations
+﻿namespace AstrologyBlog.Data.Migrations
 {
+    using System;
+
+    using Microsoft.EntityFrameworkCore.Migrations;
+
     public partial class EventClassUpdate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)

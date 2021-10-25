@@ -1,7 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
-
-namespace AstrologyBlog.Data.Migrations
+﻿namespace AstrologyBlog.Data.Migrations
 {
+    using Microsoft.EntityFrameworkCore.Migrations;
+
     public partial class AddPropertySurnameInOrder : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
