@@ -18,10 +18,7 @@
                             <h4>В @eventView.Place</h4>
                             <p>@eventView.Description</p>
                         </div>
-                        @if (this.User.IsInRole(GlobalConstants.AdministratorRoleName))
-                        {
-                            <a asp-action="Details" asp-route-id="@eventView.Id" class="btn wow fadeInDown animated">Детайли</a>
-                        }
+                        <a asp-action="Details" asp-route-id="@eventView.Id" class="btn wow fadeInDown animated">Детайли</a>
                         <hr />
                     </div>
                     <div class="clear"></div>

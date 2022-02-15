@@ -11,12 +11,16 @@
             <h4>В @Model.Place</h4>
             <p>@Model.Description</p>
         </div>
-        <div class="single-meta">
-            <a asp-controller="Events" asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Редактирай</a>
-            <hr />
-            <form method="post" asp-action="Delete" id="deleteForm" asp-route-id="@Model.Id"></form>
-            <button class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Изтрий</button>
-        </div>
+
+        @if (this.User.IsInRole(GlobalConstants.AdministratorRoleName))
+        {
+            <div class="single-meta">
+                <a asp-controller="Events" asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Редактирай</a>
+                <hr />
+                <form method="post" asp-action="Delete" id="deleteForm" asp-route-id="@Model.Id"></form>
+                <button class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Изтрий</button>
+            </div>
+        }
     </main>
 </div>
 

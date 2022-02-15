@@ -46,7 +46,6 @@
             return this.RedirectToAction(nameof(this.All));
         }
 
-        [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
         public IActionResult Details(int id)
         {
             var eventView = this.eventsService.GetById<EventViewModel>(id);
