@@ -53,7 +53,7 @@
 
         public T GetById<T>(int id)
         {
-            var eventModel = this.eventRepository.AllAsNoTracking()
+            var eventModel = this.eventRepository.All()
                 .Where(x => x.Id == id)
                 .To<T>()
                 .FirstOrDefault();

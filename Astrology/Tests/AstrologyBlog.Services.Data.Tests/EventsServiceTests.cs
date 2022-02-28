@@ -2,11 +2,14 @@
 {
     using System.Collections.Generic;
     using System.Linq;
+    using System.Reflection;
     using System.Threading.Tasks;
 
     using AstrologyBlog.Data.Common.Repositories;
     using AstrologyBlog.Data.Models;
+    using AstrologyBlog.Services.Mapping;
     using AstrologyBlog.Web.Controllers;
+    using AstrologyBlog.Web.ViewModels;
     using AstrologyBlog.Web.ViewModels.Events;
     using FakeItEasy;
     using Microsoft.AspNetCore.Mvc;
@@ -15,6 +18,43 @@
 
     public class EventsServiceTests
     {
+        public EventsServiceTests()
+        {
+            AutoMapperConfig.RegisterMappings(typeof(ErrorViewModel).GetTypeInfo().Assembly);
+        }
+
+        [Fact]
+        public void TestGetCountCourses_WithoutAnyData_ShouldReturnZero()
+        {
+            var mockEventRepo = new Mock<IDeletableEntityRepository<Event>>();
+            mockEventRepo.Setup(x => x.All()).Returns(new List<Event>
+                {
+                new Event
+                    {
+                        Id = 1,
+                        Title = "Title1",
+                        Name = "Pesho",
+                        Date = "12/22/2022",
+                        Place = "Sofia",
+                        Description = "asdasd;lsd jls fklsd fjsklfj sdkl fjsdkl sdasd;lsd jls fklsd fjsklfj sdkl fjsdkl fjsdkj fsdklfj klsd fjssdasd;lsd jls fklsd fjsklfj sdkl fjsdkl fjsdkj fsdklfj klsd fjssdasd;lsd jls fklsd fjsklfj sdkl fjsdkl fjsdkj fsdklfj klsd fjssdasd;lsd jls fklsd fjsklfj sdkl fjsdkl fjsdkj fsdklfj klsd fjssdasd;lsd jls fklsd fjsklfj sdkl fjsdkl fjsdkj fsdklfj klsd fjsfjsdkj fsdklfj klsd fjsd",
+                    },
+                new Event
+                    {
+                        Id = 2,
+                        Title = "Title2",
+                        Name = "Gosho",
+                        Date = "11/22/2022",
+                        Place = "Plovdiv",
+                        Description = "asdasd;lsd jls fklsd fjsklfj sdkl fjsdkl sdasd;lsd jls fklsd fjsklfj sdkl fjsdkl fjsdkj fsdklfj klsd fjssdasd;lsd jls fklsd fjsklfj sdkl fjsdkl fjsdkj fsdklfj klsd fjssdasd;lsd jls fklsd fjsklfj sdkl fjsdkl fjsdkj fsdklfj klsd fjssdasd;lsd jls fklsd fjsklfj sdkl fjsdkl fjsdkj fsdklfj klsd fjssdasd;lsd jls fklsd fjsklfj sdkl fjsdkl fjsdkj fsdklfj klsd fjsfjsdkj fsdklfj klsd fjsd",
+                    },
+                }.AsQueryable());
+
+            var eventsService = new EventsService(mockEventRepo.Object);
+            var allDepartments = eventsService.GetAll<EventViewModel>();
+            Assert.Equal(2, allDepartments.Count());
+            Assert.Equal("Gosho", eventsService.GetById<EventViewModel>(2).Name);
+        }
+
         [Fact]
         public void TestGetAll_WhenCreate2EventsShoultReturn2EventsWithTheSameValues()
         {
